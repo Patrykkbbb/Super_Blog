@@ -7,7 +7,26 @@ class BlogPostController < ApplicationController
     def show 
     end
 
-    def find_blog_post
-      @blog_post = BlogPost.find(params[:id])
+    def new
+      @blog_post = BlogPost.new
     end
+
+    def create
+      @blog_post = BlogPost.new(blog_post_params)
+      if @blog_post.save
+        redirect_to @blog_post
+      else
+        render :new, status: :unprocessable_entity
+      end
+    end
+
+    def find_blog_post
+      begin
+        @blog_post = BlogPost.find(params[:id])
+      rescue ActiveRecord::RecordNotFound => e
+        redirect_to '/404'
+      end
+    end
+
+    
 end
