@@ -13,5 +13,9 @@
         <div><%= message %></div>
       <% end %>
     </div>
+    <%= form.hidden_field :views, value: 1 %>
+    <% @blog_post.errors.full_messages_for(:views).each do |message| %>
+      <%= message %>
+    <% end %>
     <%= form.submit "Zapisz" %>
 <% end %>

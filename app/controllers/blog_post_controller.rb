@@ -5,6 +5,8 @@ class BlogPostController < ApplicationController
     end
     
     def show 
+      @blog_post.views += 1 
+      @blog_post.save
     end
 
     def new
@@ -46,7 +48,7 @@ class BlogPostController < ApplicationController
 
     private
     def blog_post_params
-      params.require(:blog_post).permit(:title, :content)
+      params.require(:blog_post).permit(:title, :content, :views)
     end
 
     def find_blog_post
