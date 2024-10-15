@@ -1,4 +1,11 @@
+<%= link_to "Utworz nowy post", new_blog_post_path %>
+<hr>
 <% @blog_post.each do |blog_post| %>
     <h2><%= link_to blog_post.title, blog_post_path(blog_post) %></h2>
-    <p><%= blog_post.content %></p>
+    <p><%= blog_post.content.to_plain_text.truncate(70) %></p>
+    <%= link_to "Edytuj", edit_blog_post_path(blog_post) %>
+    <%= link_to "Usun", blog_post_path(blog_post), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Czy Na pewno chcesz usunac '#{blog_post.title}'?"
+    } %>
 <% end %>
