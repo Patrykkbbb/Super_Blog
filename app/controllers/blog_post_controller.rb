@@ -14,8 +14,10 @@ class BlogPostController < ApplicationController
     def create
       @blog_post = BlogPost.new(blog_post_params)
       if @blog_post.save
+        flash.notice = "Pomyslnie utworzono #{@blog_post.title}!"
         redirect_to @blog_post
       else
+        flash.alert = "Blad podczas tworzenia posta"
         render :new, status: :unprocessable_entity
       end
     end
@@ -25,15 +27,21 @@ class BlogPostController < ApplicationController
 
     def update
       if @blog_post.update(blog_post_params)
+        flash.notice = "Pomyslnie zmodyfikowano #{@blog_post.title}!"
         redirect_to @blog_post
       else 
+        flash.alert = "Blad podczas modyfikowania tresci"
         render :edit, status: :unprocessable_entity
       end
     end
 
     def destroy
       if @blog_post.destroy
-      redirect_to root_path, status: :see_other
+        flash.notice = "Pomyslnie usunieto #{@blog_post.title}!"
+        redirect_to root_path, status: :see_other
+      else 
+        flash.alert = "Nie mozna usunac #{@blog_post.title}"
+      end
     end
 
     private
@@ -44,8 +52,9 @@ class BlogPostController < ApplicationController
     def find_blog_post
       begin
         @blog_post = BlogPost.find(params[:id])
-      rescue ActiveRecord::RecordNotFound => e
-        redirect_to '/404'
+      rescue ActiveRecord::RecordNotFound
+        flash.alert = "BLAD: Nie znaleziono takiego adresu!"
+        redirect_to root_path
       end
     end
 
