@@ -2,5 +2,5 @@
 <hr>
 <% @blog_post.each do |blog_post| %>
     <h2><%= link_to blog_post.title, blog_post_path(blog_post) %></h2>
-    <p><%= blog_post.content %></p>
+    <p><%= blog_post.content.to_plain_text.truncate(70) %></p>
 <% end %>
