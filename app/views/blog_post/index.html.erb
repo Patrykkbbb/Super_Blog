@@ -1,3 +1,5 @@
+
+<br>
 <%= link_to "Utworz nowy post", new_blog_post_path %>
 <hr>
 <% @blog_post.each do |blog_post| %>
@@ -8,4 +10,5 @@
         turbo_method: :delete,
         turbo_confirm: "Czy Na pewno chcesz usunac '#{blog_post.title}'?"
     } %>
+    <p><i>Data publikacji: <%= blog_post.updated_at %></i></p>
 <% end %>
