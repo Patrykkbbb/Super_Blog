@@ -58,4 +58,10 @@ RSpec.describe BlogPost, type: :model do
     numeric.views = -1
     expect(numeric).to_not be_valid
   end
+
+  it "should sort posts" do 
+    expect(BlogPost.sorted.to_sql).to eq BlogPost.sorted.order(updated_at: :asc).to_sql
+    expect(BlogPost.all.to_sql).to_not eq BlogPost.sorted.order(updated_at: :asc).to_sql
+    expect(BlogPost.all.to_sql).to_not eq BlogPost.all.order(created_at: :asc).to_sql
+  end
 end
