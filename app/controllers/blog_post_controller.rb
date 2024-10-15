@@ -1,5 +1,5 @@
 class BlogPostController < ApplicationController
-    before_action :find_blog_post, only: [:show,:edit,:update]
+    before_action :find_blog_post, only: [:show,:edit,:update,:destroy]
     def index 
       @blog_post = BlogPost.all
     end
@@ -29,6 +29,11 @@ class BlogPostController < ApplicationController
       else 
         render :edit, status: :unprocessable_entity
       end
+    end
+
+    def destroy
+      if @blog_post.destroy
+      redirect_to root_path, status: :see_other
     end
 
     private
