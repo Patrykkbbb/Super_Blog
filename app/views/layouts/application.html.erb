@@ -18,6 +18,8 @@
   </head>
 
   <body>
+    <%= link_to "edytuj profil", edit_user_registration_path %>
+    <%= link_to "Rejestracja", new_user_registration_path %>
     <div><%= notice if notice %></div>
     <div><%= alert if alert %></div>
     <%= yield %>

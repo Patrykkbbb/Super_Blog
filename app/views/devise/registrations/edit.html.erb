@@ -8,6 +8,25 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <div>
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= f.file_field :avatar, direct_upload: true %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
