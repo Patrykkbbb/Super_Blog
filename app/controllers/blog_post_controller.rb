@@ -1,5 +1,5 @@
 class BlogPostController < ApplicationController
-    before_action :find_blog_post, only: [:show]
+    before_action :find_blog_post, only: [:show,:edit,:update]
     def index 
       @blog_post = BlogPost.all
     end
@@ -17,6 +17,17 @@ class BlogPostController < ApplicationController
         redirect_to @blog_post
       else
         render :new, status: :unprocessable_entity
+      end
+    end
+
+    def edit
+    end
+
+    def update
+      if @blog_post.update(blog_post_params)
+        redirect_to @blog_post
+      else 
+        render :edit, status: :unprocessable_entity
       end
     end
 
