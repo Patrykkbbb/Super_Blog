@@ -1,7 +1,7 @@
 class BlogPostController < ApplicationController
     before_action :find_blog_post, only: [:show,:edit,:update,:destroy]
     def index 
-      @blog_post = BlogPost.all
+      @blog_post = BlogPost.sorted
     end
     
     def show 
@@ -44,7 +44,7 @@ class BlogPostController < ApplicationController
       else 
         flash.alert = "Nie mozna usunac #{@blog_post.title}"
       end
-    end
+    end 
 
     private
     def blog_post_params
