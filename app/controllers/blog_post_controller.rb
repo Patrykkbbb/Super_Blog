@@ -20,6 +20,11 @@ class BlogPostController < ApplicationController
       end
     end
 
+    private
+    def blog_post_params
+      params.require(:blog_post).permit(:title, :content)
+    end
+
     def find_blog_post
       begin
         @blog_post = BlogPost.find(params[:id])
