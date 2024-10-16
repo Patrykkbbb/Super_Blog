@@ -1,7 +1,19 @@
 
 <%= @blog_post.user_id %>
 <h3> Autor: <%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></h3>
+
+<%= image_tag @blog_post.user.avatar if @blog_post.user.avatar.present? %>
 <h3><%= @blog_post.title %></h3>
 <p><%= @blog_post.content %></p>
 <p> Post Wyswietlono <%= @blog_post.views %> razy <p>
+
+<hr>
+<h3> Komentarze </h3>
+
+
+
+<hr>
+<h3> Skomentuj </h3>
+<%= render "comment/form" %>
+
 <%= link_to "Cofnij", root_path %>
