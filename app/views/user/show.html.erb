@@ -1,0 +1,26 @@
+<h2> hello </h2>
+
+<%= image_tag @user.avatar if @user.avatar.present? %>
+
+<% if current_admin %>
+<h4>Nazwa uzytkownika: <%= @user.nickname %></h4>
+<p><i> Administrator </i></p>
+<% elsif current_user %>
+<h4>Nazwa uzytkownika: <%= @user.nickname %></h4>
+<p><i> Uzytkownik </i></p>
+<% end %>
+<% if @user.first_name == nil %>
+<h4>Imie: brak </h4>
+<% else %>
+<h4>Imie: <%= @user.first_name %></h4>
+<% end %>
+<% if @user.first_name == nil %>
+<h4>Nazwisko: brak </h4>
+<% else %>
+<h4>Nazwisko: <%= @user.last_name %></h4>
+<% end %>
+<h4>Email: <%= @user.email %></h4>
+
+
+<%= link_to "Edytuj profil", edit_user_registration_path %> <br><br>
+<%= link_to "Cofnij", root_path %>
