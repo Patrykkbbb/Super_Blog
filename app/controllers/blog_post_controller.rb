@@ -1,5 +1,7 @@
 class BlogPostController < ApplicationController
     before_action :find_blog_post, only: [:show,:edit,:update,:destroy]
+    before_action :authenticate_user!, except: [:index]
+
     def index 
       @blog_post = BlogPost.sorted
     end
@@ -60,5 +62,8 @@ class BlogPostController < ApplicationController
       end
     end
 
-    
+    def authenticate_user!
+      redirect_to new_user_session_path, alert: "Musisz byc zalogowany" unless user_signed_in?
+    end
+
 end
