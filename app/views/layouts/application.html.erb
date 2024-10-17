@@ -18,6 +18,7 @@
   </head>
 
   <body>
+    <%= render "search/form" %>
     <% if user_signed_in? %>
       <p> Zalogowany jako: <b> <%= current_user.nickname %></b></p>
       <%= link_to "profil", user_path(current_user.id) %>
