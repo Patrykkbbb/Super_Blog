@@ -9,18 +9,41 @@
 <h4>Nazwa uzytkownika: <%= @user.nickname %></h4>
 <p><i> Uzytkownik </i></p>
 <% end %>
+
 <% if @user.first_name == nil %>
 <h4>Imie: brak </h4>
 <% else %>
 <h4>Imie: <%= @user.first_name %></h4>
 <% end %>
+
 <% if @user.first_name == nil %>
 <h4>Nazwisko: brak </h4>
 <% else %>
 <h4>Nazwisko: <%= @user.last_name %></h4>
 <% end %>
+
 <h4>Email: <%= @user.email %></h4>
 
+<hr>
 
-<%= link_to "Edytuj profil", edit_user_registration_path %> <br>
-<%= link_to "Cofnij", root_path %>
+<h3> Posty Uzytkownika <%= @user.nickname %> </h3>
+
+    <table>
+    <tr>
+        <th>Nazwa Posta</th>
+        <th>Wyswietlenia</th>
+
+    </tr>
+    <% @blog_posts.each do |blog_posts| %>
+    <tr>
+        <td><%= link_to blog_posts.title, blog_post_path(blog_posts) %></td>
+        <td><%= blog_posts.views %></td>
+    </tr>
+    <% end %>
+    </table> 
+<br>
+<% if current_user.id == @user.id %>
+<%= link_to "Edytuj profil", edit_user_registration_path %>
+<% end %>
+<br><br>
+<%= link_to "Cofnij", :back %>
