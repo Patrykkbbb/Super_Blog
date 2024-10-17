@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   patch "blog_post/:id", to: "blog_post#update"
   delete "blog_post/:id", to: "blog_post#destroy"
 
-  resources :comments
-  
+  resources :blog_post do 
+    resources :comments
+  end
 end

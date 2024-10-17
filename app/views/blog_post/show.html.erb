@@ -9,11 +9,18 @@
 
 <hr>
 <h3> Komentarze </h3>
+<div>
+  <% @blog_post.comments.each do |comments| %>
+    <%= link_to comments.commenter, user_path(comments.user_id) %><br>
+    <%= comments.body %><br>
+    <%= comments.id %>
 
 
+  <% end %>
+</div>
 
 <hr>
 <h3> Skomentuj </h3>
-<%= render "comment/form" %>
+<%= render "comments/form" %>
 
-<%= link_to "Cofnij", root_path %>
+<%= link_to "Cofnij", :back %>
