@@ -18,6 +18,15 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <p> Zalogowany jako: <b> <%= current_user.nickname %></b></p>
+      <%= link_to "profil", user_path(current_user.id) %>
+      <%= link_to "edytuj", edit_user_registration_path %>
+      <%= button_to "Wyloguj", destroy_user_session_path, :method => :delete %>
+    <% else %>
+      <%= link_to "Zaloguj", new_user_session_path %>
+      <%= link_to "Rejestracja", new_user_registration_path %>
+    <% end %>
     <div><%= notice if notice %></div>
     <div><%= alert if alert %></div>
     <%= yield %>

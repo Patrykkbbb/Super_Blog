@@ -1,0 +1,11 @@
+<%= form_with model: [@blog_post, @blog_post.comments.build] do |form| %>
+    <div>
+      <%= form.hidden_field :user_id, value: "#{current_user.id}" %>
+      <%= form.hidden_field :commenter, value: "#{current_user.nickname}" %>
+    </div>
+    <div>
+      <%= form.label :body %>
+      <%= form.text_area :body %>
+    </div>
+    <%= form.submit "Komentuj" %>
+<% end %>
