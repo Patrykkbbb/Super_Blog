@@ -11,6 +11,10 @@ class BlogPostController < ApplicationController
       @blog_post.save
     end
 
+    def pending
+      @blog_post = BlogPost.sorted
+    end
+
     def new
       @blog_post = BlogPost.new
     end
@@ -50,7 +54,7 @@ class BlogPostController < ApplicationController
 
     private
     def blog_post_params
-      params.require(:blog_post).permit(:title, :content, :views, :user_id)
+      params.require(:blog_post).permit(:title, :content, :views, :user_id, :status)
     end
 
     def find_blog_post

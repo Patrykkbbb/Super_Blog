@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_17_015037) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_17_224122) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,6 +74,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_17_015037) do
     t.datetime "updated_at", null: false
     t.integer "views"
     t.bigint "user_id", null: false
+    t.string "status", default: "pending"
     t.index ["user_id"], name: "index_blog_posts_on_user_id"
   end
 

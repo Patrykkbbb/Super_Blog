@@ -21,5 +21,9 @@
     <% @blog_post.errors.full_messages_for(:views).each do |message| %>
       <%= message %>
     <% end %>
+    <div>
+    <%= form.label :status %>
+    <%= form.select :status, Opublikowany: 'Opublikowany', Oczekujacy: 'Oczekujacy' %>
+    </div>
     <%= form.submit "Zapisz" %>
 <% end %>
