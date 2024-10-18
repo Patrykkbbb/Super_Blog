@@ -46,4 +46,5 @@
 <%= link_to "Edytuj profil", edit_user_registration_path %>
 <% end %>
 <br><br>
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
 <%= link_to "Cofnij", :back %>

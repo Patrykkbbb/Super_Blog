@@ -8,8 +8,3 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-100.times do |b|
-    b = 0
-    BlogPost.create!(title: "Test#{b}", content: "pagination_test " * 4, user_id: "1", status: "Opublikowany", views: 1)
-    b += 1
-end
