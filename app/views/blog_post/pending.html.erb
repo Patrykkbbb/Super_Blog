@@ -13,3 +13,5 @@
         <p><i>Data publikacji: <%= blog_post.updated_at %></i></p>
     <% end %>
 <% end %>
+
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
