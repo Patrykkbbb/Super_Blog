@@ -1,6 +1,6 @@
 class BlogPost < ApplicationRecord
     has_rich_text :content
-    has_many :comments
+    has_many :comments, dependent: :destroy
     belongs_to :user
 
     VALID_STATUSES = ['Opublikowany','Oczekujacy']
@@ -8,6 +8,8 @@ class BlogPost < ApplicationRecord
     validates :content, presence: true, length: { in: 20..1500 }
     validates :views, numericality: {default: "1".to_i , only_integer: true, greater_than: 0, less_than: 9999 }
     validates :status, inclusion: { in: VALID_STATUSES }
+
+
 
     scope :sorted, -> {order(updated_at: :asc)}
 
