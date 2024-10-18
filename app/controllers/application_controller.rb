@@ -14,4 +14,6 @@ class ApplicationController < ActionController::Base
     @query = BlogPost.ransack(params[:q])
     @blog_post = @query.result(distinct: true)
   end
+
+  include Pagy::Backend
 end

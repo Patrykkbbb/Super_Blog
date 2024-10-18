@@ -1,4 +1,7 @@
 
+<title><%= content_for(:title) || "Blog" %></title>
+
+
 <br>
 <%= link_to "Utworz nowy post", new_blog_post_path %>
 <%= link_to "Poczekalnia", pending_blog_posts_path %>
@@ -17,3 +20,6 @@
         <p><i>Data publikacji: <%= blog_post.updated_at %></i></p>
     <% end %>
 <% end %>
+
+<hr>
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
