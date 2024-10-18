@@ -1,4 +1,4 @@
-class SearchController < ApplcationController 
+class SearchController < ApplicationController 
     def index
       @query = BlogPost.ransack(params[:q])
       @blog_post = @query.result(distinct: true)

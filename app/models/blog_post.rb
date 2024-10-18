@@ -10,4 +10,9 @@ class BlogPost < ApplicationRecord
     validates :status, inclusion: { in: VALID_STATUSES }
 
     scope :sorted, -> {order(updated_at: :asc)}
+
+    def self.ransackable_attributes(auth_object = nil)
+        ["content", "created_at", "id", "id_value", "status", "title", "updated_at", "user_id", "views"]
+    end
+    
 end
