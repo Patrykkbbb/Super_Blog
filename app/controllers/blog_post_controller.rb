@@ -4,7 +4,7 @@ class BlogPostController < ApplicationController
 
     def index 
       @blog_post = BlogPost.sorted
-      @pagy, @blog_post = pagy(BlogPost.sorted)
+      @pagy, @blog_post = pagy(BlogPost.all)
     end
     
     def show 
@@ -14,7 +14,7 @@ class BlogPostController < ApplicationController
 
     def pending
       @blog_post = BlogPost.sorted
-      @pagy, @blog_post = pagy(BlogPost.sorted)
+      @pagy, @blog_post = pagy(BlogPost.all)
     end
 
     def new
