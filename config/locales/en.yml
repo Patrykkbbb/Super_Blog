@@ -24,15 +24,23 @@ en:
       delete: "Delete"
       confirm: "Are you sure you want to delete"
       pub_status: "Published"
-      date: "Date"
+      date: "Post Date"
 
     show:
       author: "Author"
-      pend_status: "Pending"
+      pend_status: "Awaiting Approval"
       comments: "Comments"
       views: "Views"
       comment: "Comment"
       back: "Cofnij"
+
+    pending:
+      information: "Posts Awaiting Administrator Approval"      
+      edit: "Edit"
+      delete: "Delete"
+      confirm: "Are you sure you want to delete"
+      date: "Post Date"
+      pend_status: "Awaiting Approval"
 
     controller:
       create_success: "Successfully created a post. The post has been sent to the queue and is awaiting approval by the administrator."
@@ -43,3 +51,21 @@ en:
       destroy_error: "Cannot delete the post."  
       find_error: "Post not found"
       auth_alert: "You must be logged in!"
+
+    new:
+      information: "Create new post"
+      back: "Back"
+
+    create_form:
+      title: "Post title"
+      pub_status: "Published"
+      pend_status: "Pending"
+      save: "Save"
+
+    edit:
+      information: "Edit"
+      back: "Back"
+
+  comments:
+    comment_form:
+      comment: "Comment"

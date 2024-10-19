@@ -34,6 +34,15 @@ pl:
       comment: "Skomentuj"
       back: "Cofnij"
 
+    pending:
+      information: "Posty oczekujace na akceptacje"
+      edit: "Edytuj"
+      delete: "Usun"    
+      confirm: "Czy na pewno chcesz usunac"  
+      date: "Data utworzenia"
+      pend_status: "Oczekujacy na dodanie"
+
+
     controller:
       create_success: "Pomyslnie utworzono post. Post trafil do poczekalni i oczekuje na akceptacje przez administratora"
       create_error: "Blad podczas tworzenia posta"
@@ -44,3 +53,24 @@ pl:
       find_error: "Nie odnaleziono takiego posta"
       auth_alert: "Musisz byc zalogowany!"
 
+    new:
+      information: "Stworz nowy post"
+      back: "Cofnij"
+
+    create_form:
+      title: "Tytul Posta"
+      pub_status: "Opublikowany"
+      pend_status: "Oczekujacy"
+      save: "Zapisz"
+
+    edit:
+      information: "Edytuj"
+      back: "Cofnij"
+
+  comments:
+    comment_form:
+      comment: "Skomentuj"
+
+  comments:
+    comment_form:
+      comment: "Skomentuj"

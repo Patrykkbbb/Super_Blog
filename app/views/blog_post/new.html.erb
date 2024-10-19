@@ -1,3 +1,3 @@
-<h2> Stworz nowy post </h2>
+<h2> <%= t "blog_post.new.information" %> </h2>
 <%= render "form", blog_post:@blog_post %>
-<%= link_to "Cofnij", root_path %>
+<%= link_to (t("blog_post.new.back")), root_path %>
