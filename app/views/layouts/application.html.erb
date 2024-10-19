@@ -18,9 +18,17 @@
   </head>
 
   <body>
+    <br>
     <%= render "search/form" %>
     <% if user_signed_in? %>
-      <p> Zalogowany jako: <b> <%= current_user.nickname %></b></p>
+      <% if current_user.admin? %>
+        <%= link_to "Panel administratora", admin_dashboard_path %>
+      <% end %>
+        <% if current_user.admin? %>
+          <p> Zalogowany jako: <b> <%= current_user.nickname %> (Administrator) </b></p>
+        <% else %>
+          <p> Zalogowany jako: <b> <%= current_user.nickname %> </b></p>
+        <% end %>
       <%= link_to "profil", user_path(current_user.id) %>
       <%= link_to "edytuj", edit_user_registration_path %>
       <%= button_to "Wyloguj", destroy_user_session_path, :method => :delete %>

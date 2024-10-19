@@ -2,14 +2,26 @@
 <h2> Posty Oczekujace na dodanie przez administratora </h2>
 
 <% @blog_post.each do |blog_post| %>
-    <% if blog_post.status == "Oczekujacy" %>
+    <% if blog_post.status == "pending" %>
         <h2><%= link_to blog_post.title, blog_post_path(blog_post) %></h2>
         <p><%= blog_post.content.to_plain_text.truncate(70) %></p>
-        <%= link_to "Edytuj", edit_blog_post_path(blog_post) %>
-        <%= link_to "Usun", blog_post_path(blog_post), data: {
-            turbo_method: :delete,
-            turbo_confirm: "Czy Na pewno chcesz usunac '#{blog_post.title}'?"
-        } %>
-        <p><i>Data publikacji: <%= blog_post.updated_at %></i></p>
+        <% if current_user.admin? %>
+            <%= link_to "Edytuj", edit_blog_post_path(blog_post) %>
+            <%= link_to "Usun", blog_post_path(blog_post), data: {
+                turbo_method: :delete,
+                turbo_confirm: "Czy Na pewno chcesz usunac '#{blog_post.title}'?"
+            } %>
+        <% end %>
+        <% if user_signed_in? %>
+            <% if current_user.id == blog_post.user_id %>
+                <%= link_to "Edytuj", edit_blog_post_path(blog_post) %>
+                <%= link_to "Usun", blog_post_path(blog_post), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Czy Na pewno chcesz usunac '#{blog_post.title}'?"
+                } %>        
+            <% end %>
+        <% end %>
+        <p><i> Status: Oczekujacy na dodanie </i></p>
+        <p><i>Data utworzenia: <%= blog_post.updated_at %></i></p>
     <% end %>
 <% end %>
