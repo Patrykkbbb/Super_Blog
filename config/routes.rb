@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :users
   scope "(:locale)", locale: /en|pl/ do
+    devise_for :admins
+    devise_for :users
     get "search/", to: "search#index"
     # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
     get "user/:id", to: "user#show", as: :user

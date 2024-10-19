@@ -1,5 +1,27 @@
 pl:
   hello: "Witaj"
 
-  it:
-    is: "Ja"
+  title: 
+
+  application:
+    body:
+      logged_as: "Zalogowany Jako"
+      profile: "Profil"
+      edit: "Edytuj profil"
+      logout: "Wyloguj"
+      login: "Zaloguj"
+      signin: "Rejestracja"
+
+  blog_post:
+    index: 
+      create: "Utworz nowy post"
+      pending: "Poczekalnia"
+      users_list: "Lista uzytkownikow"
+      about: "O mnie"
+
+    body:
+      edit: "Edytuj"
+      delete: "Usun"    
+      confirm: "Czy na pewno chcesz usunac"  
+      pub_status: "Opublikowany"
+      date: "Data utworzenia"

@@ -1,5 +1,27 @@
 en:
   hello: "Hello world"
 
-  it:
-    is: "Me"
+  title: 
+
+  application:
+    body:
+      logged_as: "Logged as"
+      profile: "Profile"
+      edit: "Edit profile"
+      logout: "Logout"
+      login: "Sign in"
+      signin: "Sign up"
+    
+  blog_post:
+    index: 
+      create: "Create new post"
+      pending: "Pending posts"
+      users_list: "Users list"
+      about: "About me"
+
+    body:
+      edit: "Edit"
+      delete: "Delete"
+      confirm: "Are you sure you want to delete"
+      pub_status: "Published"
+      date: "Date"
