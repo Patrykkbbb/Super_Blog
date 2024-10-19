@@ -33,3 +33,13 @@ en:
       views: "Views"
       comment: "Comment"
       back: "Cofnij"
+
+    controller:
+      create_success: "Successfully created a post. The post has been sent to the queue and is awaiting approval by the administrator."
+      create_error: "Error while creating the post."
+      update_success: "Post successfully modified."
+      update_error: "Error while editing the content."  
+      destroy_success: "Post successfully deleted."  
+      destroy_error: "Cannot delete the post."  
+      find_error: "Post not found"
+      auth_alert: "You must be logged in!"
