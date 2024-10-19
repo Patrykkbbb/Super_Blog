@@ -21,9 +21,12 @@
     <% @blog_post.errors.full_messages_for(:views).each do |message| %>
       <%= message %>
     <% end %>
+    
+    <% if current_user.admin? %>
     <div>
-    <%= form.label :status %>
-    <%= form.select :status, Opublikowany: 'Opublikowany', Oczekujacy: 'Oczekujacy' %>
-    </div>
+      <%= form.label :status %>
+      <%= form.select :status, Opublikowany: 'Opublikowany', Oczekujacy: 'Oczekujacy' %>
+      </div>
+    <% end %>
     <%= form.submit "Zapisz" %>
 <% end %>

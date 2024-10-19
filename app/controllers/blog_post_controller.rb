@@ -26,7 +26,7 @@ class BlogPostController < ApplicationController
     def create
       @blog_post = BlogPost.new(blog_post_params)
       if @blog_post.save
-        flash.notice = "Pomyslnie utworzono #{@blog_post.title}!"
+        flash.notice = "Pomyslnie utworzono #{@blog_post.title}. Post trafil do poczekalni i oczekuje na akceptacje przez administratora!"
         redirect_to @blog_post
       else
         flash.alert = "Blad podczas tworzenia posta"

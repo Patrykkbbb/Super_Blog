@@ -7,5 +7,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
+  def admin?
+    self.admin
+  end
+
   validates :nickname, presence: true, length: { in: 4..40 }
 end
