@@ -18,8 +18,19 @@
   <% @blog_post.comments.each do |comments| %>
     <%= link_to comments.commenter, user_path(comments.user_id) %><br>
     <%= comments.body %><br>
-    <%= comments.id %>
+    <% if current_user.id == comments.user_id %>
+      <%= link_to "usun", blog_post_comment_path(@blog_post, comments) , data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %><br><br>
+    <% elsif current_user.admin? %>
+      <%= link_to "usun", blog_post_comment_path(@blog_post, comments) , data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %><br><br>
+    <% end %>
   <% end %>
+
 </div>
 
 <hr>

@@ -32,7 +32,6 @@
     <tr>
         <th>Nazwa Posta</th>
         <th>Wyswietlenia</th>
-
     </tr>
     <% @blog_posts.each do |blog_posts| %>
     <tr>
@@ -43,6 +42,8 @@
     </table> 
 <br>
 <% if current_user.id == @user.id %>
+<%= link_to "Edytuj profil", edit_user_registration_path %>
+<% elsif current_user.admin? %>
 <%= link_to "Edytuj profil", edit_user_registration_path %>
 <% end %>
 <br><br>
