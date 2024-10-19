@@ -2,11 +2,10 @@
 
 <%= image_tag @user.avatar if @user.avatar.present? %>
 
-<% if current_admin %>
 <h4>Nazwa uzytkownika: <%= @user.nickname %></h4>
+<% if @user.admin? %>
 <p><i> Administrator </i></p>
-<% elsif current_user %>
-<h4>Nazwa uzytkownika: <%= @user.nickname %></h4>
+<% else %>
 <p><i> Uzytkownik </i></p>
 <% end %>
 

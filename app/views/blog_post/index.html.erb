@@ -21,6 +21,12 @@
                     turbo_method: :delete,
                     turbo_confirm: "Czy Na pewno chcesz usunac '#{blog_post.title}'?"
                 } %>
+            <% elsif current_user.id == blog_post.user_id %>
+                <%= link_to "Edytuj", edit_blog_post_path(blog_post) %>
+                <%= link_to "Usun", blog_post_path(blog_post), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Czy Na pewno chcesz usunac '#{blog_post.title}'?"
+                } %>
             <% end %>
         <% end %>
         <p><i> Status: Opublikowany </i></p>
