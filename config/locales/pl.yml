@@ -67,10 +67,52 @@ pl:
       information: "Edytuj"
       back: "Cofnij"
 
-  comments:
-    comment_form:
-      comment: "Skomentuj"
+  devise:
+    confirmations:
+      confirm: "Wyslij ponownie instrukcje potwierdzenia"
+
+    mailer:
+      confirmation_instructions:
+        welcome: "Witaj" 
+        message: "Mozesz potwierdzic adres e-mail swojego konta za pomoca ponizszego linku"
+        confirm: "Potwierdz"
+
+      email_changed:
+        welcome: "Witaj"
+        message_before: "Kontaktujemy się z Toba, aby powiadomić Cie, że Twoj adres e-mail zostaje zmieniony na"
+        message_after: "Kontaktujemy się z Toba, aby powiadomić Cie, że Twoj adres e-mail zostal zmieniony na"
+
+      password_changed:
+        welcome: "Witaj"
+        message: "Kontaktujemy sie z Toba, aby powiadomic Cie, że Twoje haslo zostalo zmienione."
+
+      reset_password:
+        welcome: "Witaj"
+        message: "Ktos poprosil o link do zmiany Twojego hasla. Mozesz to zrobic za pomoca ponizszego linku."
+        button: "Zmien moje haslo"
+        message1: "Jesli nie prosiles o to, zignoruj te wiadomosc."
+        message2: "Twoje haslo nie zostanie zmienione, dopoki nie uzyskasz dostepu do powyzszego linku i nie utworzysz nowego."
+
+      unlock_instructions:
+        welcome: "Witaj"
+        message1: "Twoje konto zostalo zablokowane z powodu zbyt duzej liczby nieudanych prob logowania."
+        message2: "Kliknij ponizszy link, aby odblokowac swoje konto."
+        button: "Odblokuj konto"      
+
+    passwords:
+
+    registrations:
+
+    sessions:
+
+    shared:
+
+    unlocks:
 
   comments:
     comment_form:
       comment: "Skomentuj"
+
+  # search:
+    # comment_form:
+      # comment: "Skomentuj"

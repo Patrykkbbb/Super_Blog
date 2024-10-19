@@ -66,6 +66,38 @@ en:
       information: "Edit"
       back: "Back"
 
+  devise:
+    confirmations:
+      confirm: "Resend confirmation instructions"    
+
+    mailer:
+      confirmation_instructions:
+        welcome: "Welcome" 
+        message: "You can confirm your account email through the link below"  
+        confirm: "Confirm my account"
+
+      email_changed:
+        welcome: "Hello"
+        message_before: "We're contacting you to notify you that your email is being changed to"
+        message_after: "We're contacting you to notify you that your email has been changed to"
+
+      password_changed:
+        welcome: "Hello"
+        message: "We're contacting you to notify you that your password has been changed."
+
+      reset_password:
+        welcome: "Hello"
+        message: "Someone has requested a link to change your password. You can do this through the link below."
+        button: "Change my password"
+        message1: "If you didn't request this, please ignore this email."
+        message2: "Your password won't change until you access the link above and create a new one."
+
+      unlock_instructions:
+        welcome: "Hello"
+        message1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        message2: "Click the link below to unlock your account"
+        button: "Unlock my account"
+
   comments:
     comment_form:
       comment: "Comment"
