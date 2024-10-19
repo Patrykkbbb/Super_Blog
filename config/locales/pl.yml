@@ -136,13 +136,15 @@ pl:
         pass_label: "Haslo"
         pass_helper: " - to minimalna ilosc znakow hasla"
         confirm_label: "Potwierdz haslo"
-        button: "Zarejestruj" 
+        button: "Zarejestruj"
 
     sessions:
-
-    shared:
-
-    unlocks:
+      new:
+        login: "Zaloguj"
+        email: "Adres e-mail"
+        password: "Haslo"
+        remember: "Zapamietaj mnie"
+        button: "Zaloguj"
 
   comments:
     comment_form:

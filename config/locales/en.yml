@@ -138,6 +138,14 @@ en:
         confirm_label: "Confirm password"
         button: "Sign up!"
 
+    sessions:
+      new:
+        login: "Log in"
+        email: "Email address"
+        password: "Password"
+        remember: "Remember me"
+        button: "Log in"
+
   comments:
     comment_form:
       comment: "Comment"
