@@ -100,6 +100,16 @@ pl:
         button: "Odblokuj konto"      
 
     passwords:
+      edit:
+        info: "Zmien swoje haslo" 
+        label: "Nowe haslo"
+        min_info: "Minimalna ilosc znakow hasla"
+        new_pass: "nowe haslo"
+        confirm: "potwierdz nowe haslo"
+        submit: "Zmien haslo"
+      new:
+        info: "Zapomniales hasla" 
+        submit: "Wyslij nowe haslo"
 
     registrations:
 

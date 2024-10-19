@@ -98,6 +98,19 @@ en:
         message2: "Click the link below to unlock your account"
         button: "Unlock my account"
 
+    passwords:
+      edit:
+        info: "Change your password" 
+        label: "New password"
+        min_info: "characters minimum"
+        new_pass: "New Password"
+        confirm: "Confirm new password"
+        submit: "Change my password"
+
+      new:
+        info: "Forgot your password" 
+        submit: "Send me reset password instructions"
+
   comments:
     comment_form:
       comment: "Comment"
