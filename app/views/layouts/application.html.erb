@@ -18,6 +18,11 @@
   </head>
 
   <body>
+    <%= link_to "english", root_path(locale: :en) %>
+    <%= link_to "polski", root_path(locale: :pl) %>
+
+    <p><%= t "hello" %></p>
+    <hr>
     <br>
     <%= render "search/form" %>
     <% if user_signed_in? %>
