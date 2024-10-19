@@ -25,3 +25,14 @@ pl:
       confirm: "Czy na pewno chcesz usunac"  
       pub_status: "Opublikowany"
       date: "Data utworzenia"
+    
+    show:
+      author: "Autor"
+      pend_status: "Oczekujacy na dodanie"
+      comments: "Komentarze"
+      views: "Wyswietlenia"
+      comment: "Skomentuj"
+      back: "Cofnij"
+
+
+

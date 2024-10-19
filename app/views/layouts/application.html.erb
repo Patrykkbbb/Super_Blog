@@ -18,8 +18,8 @@
   </head>
 
   <body>
-    <%= link_to "🇬🇧", root_path(locale: :en) %>
-    <%= link_to "🇵🇱", root_path(locale: :pl) %>
+    <%= link_to "🇬🇧", url_for(locale: :en) %>
+    <%= link_to "🇵🇱", url_for(locale: :pl) %>
 
     <p><%= t "hello" %></p>
     <hr>
