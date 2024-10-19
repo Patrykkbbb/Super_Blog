@@ -111,6 +111,33 @@ en:
         info: "Forgot your password" 
         submit: "Send me reset password instructions"
 
+    registrations:
+      edit: 
+        info: "edit"
+        nickname: "Nickname"
+        first_name: "First name"
+        last_name: "Last name"
+        avatar_label: "Avatar"
+        confirmation: "Currently waiting confirmation for:"
+        pass_helper: "leave blank if you don't want to change it"
+        new_pass: "New password"
+        char_min: "characters minimum"
+        pass_helper2: "we need your current password to confirm your changes"
+        curr_pass: "current password"
+        button: "Save"
+        del_account: "Delete user account" 
+        del_button: "Delete account"
+        confirm: "Are you sure?"
+        back: "Cofnij"  
+      new:
+        sign_up: "Sign up"
+        nick_label: "Nickname"
+        email_label: "Email"
+        pass_label: "Password"
+        pass_helper: "characters minimum"
+        confirm_label: "Confirm password"
+        button: "Sign up!"
+
   comments:
     comment_form:
       comment: "Comment"

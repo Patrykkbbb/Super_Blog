@@ -112,6 +112,31 @@ pl:
         submit: "Wyslij nowe haslo"
 
     registrations:
+      edit: 
+        info: "Edytuj"
+        nickname: "Nazwa uzytkownika"
+        first_name: "Imie"
+        last_name: "Nazwisko"
+        avatar_label: "Avatar"
+        confirmation: "Oczekuje na potwierdzenie wiadomosci email:"
+        pass_helper: "Zostaw puste jesli nie chcesz zmieniac"
+        new_pass: "Nowe haslo"
+        char_min: " - to minimalna ilosc znakow hasla"
+        pass_helper2: "Wymagane w celu potwierdzenia zmian"
+        curr_pass: "aktualne haslo"
+        button: "Zapisz"
+        del_account: "Usun konto uzytkownika" 
+        del_button: "Usun Konto"
+        confirm: "Czy na pewno chcesz usunac to konto?"     
+        back: "Cofnij"  
+      new:
+        sign_up: "Rejestracja"
+        nick_label: "Nazwa uzytkownika"
+        email_label: "Adres email"
+        pass_label: "Haslo"
+        pass_helper: " - to minimalna ilosc znakow hasla"
+        confirm_label: "Potwierdz haslo"
+        button: "Zarejestruj" 
 
     sessions:
 
