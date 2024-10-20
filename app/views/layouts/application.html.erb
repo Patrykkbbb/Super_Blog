@@ -22,7 +22,6 @@
     <%= link_to "🇬🇧", url_for(locale: :en) %>
     <%= link_to "🇵🇱", url_for(locale: :pl) %>
 
-    <p><%= t "hello" %></p>
     <hr>
     <br>
     <%= render "search/form" %>
@@ -48,6 +47,8 @@
     <% end %>
     <div><%= notice if notice %></div>
     <div><%= alert if alert %></div>
+
+    <div class="logo"><%= image_tag "/assets/logo.png" %></div>
     <h2> <%= link_to "BlogPost", root_path %></h2>
     <hr>
     <%= yield %>

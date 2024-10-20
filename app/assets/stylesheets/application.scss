@@ -24,3 +24,31 @@
  .container{
     background-color: #f2f3f2;
  }
+ @media only screen and (max-width: 1320px){
+     .logo img{width: 900px;}
+ }
+ 
+ @media only screen and (max-width: 960px){
+     .logo img{width: 550px;}
+ }
+ @media only screen and (max-width: 770px){
+     .logo img{width: 400px;}
+ }
+ @media only screen and (max-width: 540px){
+    .logo img{width: 320px;}
+}
+
+
+
+
+
+.logo img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+ .logo{
+    margin: auto;
+ }
