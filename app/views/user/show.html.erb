@@ -39,7 +39,7 @@
     </table> 
 <br>
 <% if current_user.id == @user.id %>
-<%= link_to "Edytuj profil", edit_user_registration_path(user.id) %>
+<%= link_to "Edytuj profil", edit_user_registration_path %>
 <% elsif current_user.admin? %>
     <%= link_to "Usun", @User, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 <% end %>
