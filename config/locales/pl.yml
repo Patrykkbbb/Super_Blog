@@ -137,7 +137,6 @@ pl:
         pass_helper: " - to minimalna ilosc znakow hasla"
         confirm_label: "Potwierdz haslo"
         button: "Zarejestruj"
-
     sessions:
       new:
         login: "Zaloguj"
@@ -145,6 +144,16 @@ pl:
         password: "Haslo"
         remember: "Zapamietaj mnie"
         button: "Zaloguj"
+    shared:
+      links:
+        login: "Zaloguj"
+        signup: "Rejestracja"
+        forgot: "Nie pamietasz hasla?"
+        confirmation: "Nie otrzymales potwierdzenia hasla?"
+        unlock: "Nie otrzymales wiadomosci odblokowania konta?"
+    unlocks:
+      new:
+        resend: "Wyslij instrukcje odblokowania konta"
 
   comments:
     comment_form:

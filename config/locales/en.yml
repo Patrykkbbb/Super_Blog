@@ -145,6 +145,16 @@ en:
         password: "Password"
         remember: "Remember me"
         button: "Log in"
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot: "Forgot your password?"
+        confirmation: "Didn't receive confirmation instructions?"
+        unlock: "Didn't receive unlock instructions?"
+    unlocks:
+      new:
+        resend: "Resend unlock instructions"
 
   comments:
     comment_form:
