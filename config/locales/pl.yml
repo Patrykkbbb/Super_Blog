@@ -193,3 +193,11 @@ pl:
       add_alert: "Nie mozna dodac komentarza"
       destroy_notice: "Komentarz zostal usuniety"
       destroy_alert: "Nie mozna usunac komentarza"
+
+  title:
+    index: "SuperBlog | Strona glowna"
+    show: "SuperBlog | "
+    pending: "SuperBlog | Poczekalnia"
+    new: "SuperBlog | Stworz nowy post"
+    about: "SuperBlog | O mnie"
+    edit: "SuperBlog | Edytuj"

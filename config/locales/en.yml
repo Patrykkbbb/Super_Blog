@@ -194,3 +194,13 @@ en:
       add_alert: "Cannot add comment"
       destroy_notice: "Comment has been deleted"
       destroy_alert: "Cannot delete comment"
+
+  title:
+    index: "Super-Blog | main"
+    show: "SuperBlog | "
+    pending: "SuperBlog | Pending posts"
+    new: "SuperBlog | Create new post"
+    about: "SuperBlog | About me"
+    edit: "SuperBlog | Edit"
+
+  
