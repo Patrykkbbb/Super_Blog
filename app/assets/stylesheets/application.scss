@@ -16,6 +16,8 @@
 
  @import "bootstrap";
 
+
+ /* header */ 
  body{
     background-image: asset-url('background.png');
     background-size: cover;
@@ -39,6 +41,9 @@
  @media only screen and (max-width: 540px){
     .logo img{width: 320px;}
 }
+
+
+/* header/navbar */
 
 .logo img{
     display: block;
@@ -110,6 +115,58 @@
    font-size: 15px;
  }
 
- 
+ /* Search form */
+
+@media only screen and (max-width: 1950px){
+  .form-control{width: 40rem;}
+}
+
+@media only screen and (max-width: 1520px){
+    .form-control{width: 40rem;}
+}
+@media only screen and (max-width: 1320px){
+   .form-control{width: 40rem;}
+}
+@media only screen and (max-width: 960px){
+   .form-control{width: 30rem;}
+}
+@media only screen and (max-width: 770px){
+   .form-control{width: 25rem;}
+}
+@media only screen and (max-width: 540px){
+  .form-control{width: 15rem;}
+}
+
+.search_form{
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1950px){
+  .btn-outline-success{width: 40rem;}
+}
+
+@media only screen and (max-width: 1520px){
+  .btn-outline-success{width: 25rem;}
+}
+@media only screen and (max-width: 1320px){
+ .btn-outline-success{width: 20rem;}
+}
+@media only screen and (max-width: 960px){
+ .btn-outline-success{width: 20rem;}
+}
+@media only screen and (max-width: 770px){
+ .btn-outline-success{width: 20rem;}
+}
+@media only screen and (max-width: 540px){
+.btn-outline-success{width: 15rem;}
+}
+
+.search_button{
+  display: flex;
+  justify-content: center;
+}
+
+
  
 //  text-shadow: #ce74f7 1px 0 15px;
