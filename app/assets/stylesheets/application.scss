@@ -24,12 +24,14 @@
  .container{
     background-color: #f2f3f2;
  }
+ @media only screen and (max-width: 1520px){
+    .logo img{width: 550px;}
+}
  @media only screen and (max-width: 1320px){
-     .logo img{width: 900px;}
+     .logo img{width: 500px;}
  }
- 
  @media only screen and (max-width: 960px){
-     .logo img{width: 550px;}
+     .logo img{width: 450px;}
  }
  @media only screen and (max-width: 770px){
      .logo img{width: 400px;}
@@ -38,17 +40,25 @@
     .logo img{width: 320px;}
 }
 
-
-
-
-
 .logo img{
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-
  .logo{
     margin: auto;
  }
+
+ .langs a{
+    text-decoration: none;
+ }
+
+ .langs a{
+    border-radius: 7px;
+    box-shadow: 2px 2px 12px #ce74f7;
+
+ }
+ 
+ 
+//  text-shadow: #ce74f7 1px 0 15px;

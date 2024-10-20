@@ -19,12 +19,14 @@
 
   <body>
   <div class="container">
-    <%= link_to "🇬🇧", url_for(locale: :en) %>
-    <%= link_to "🇵🇱", url_for(locale: :pl) %>
-
+    <div class="langs">
+      <%= link_to "🇬🇧", url_for(locale: :en) %>
+      <%= link_to "🇵🇱", url_for(locale: :pl) %>
+    </div>
+ <div class="logo"><a href="<%= root_path %>"><%= image_tag "/assets/logo.png" %></a></div>
+    <br>
     <hr>
     <br>
-    <%= render "search/form" %>
     <% if user_signed_in? %>
       <% if current_user.admin? %>
         <%
@@ -45,13 +47,15 @@
       <%= link_to (t ("application.body.login")), new_user_session_path %>
       <%= link_to (t ("application.body.signin")), new_user_registration_path %>
     <% end %>
-    <div><%= notice if notice %></div>
-    <div><%= alert if alert %></div>
+    <% if notice %>
+      <div class="alert alert-success" role="alert"><%= notice %></div>
+    <% elsif alert %>
+    <div class="alert alert-danger" role="alert"><%= alert %></div>
+    <% end %>
 
-    <div class="logo"><%= image_tag "/assets/logo.png" %></div>
-    <h2> <%= link_to "BlogPost", root_path %></h2>
-    <hr>
+    <%= render "search/form" %>
     <%= yield %>
+
 </div>
   </body>
 </html>
