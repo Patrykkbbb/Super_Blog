@@ -1,16 +1,15 @@
-<h2> Wyniki Wyszukiwania: </h2>
+<h2> <%= t "search.index.result" %>: </h2>
 <% if @blog_post.count <= 0 %> 
-    <h4> Brak wynikow </h4>
+    <h4> <%= t "search.index.result_nil" %> </h4>
 <% else %>
-    <h4> Znaleziono <%= @blog_post.count %> pasujacych wynikow </h4>
+    <h4> <%= t "search.index.result_before" %> <%= @blog_post.count %>  <%= t "search.index.result_after" %> </h4>
 <% end %>
-
 
 <% @blog_post.each do |blog_post| %>
     <h3><%= link_to blog_post.title, blog_post_path(blog_post) %></h3>
     <p><%= blog_post.content.to_plain_text.truncate(70) %></p>
     <p><i>Opilikowano: <%= blog_post.created_at %></i></p>
-    <%= link_to "Wiecej", blog_post_path(blog_post) %>
+    <%= link_to "#{t "search.index.more_button"}", blog_post_path(blog_post) %>
     <p>Status: <%= blog_post.status %></p>
 <% end %>
 

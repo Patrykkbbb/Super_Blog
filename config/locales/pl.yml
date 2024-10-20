@@ -160,6 +160,12 @@ pl:
     form:
       placeholder: "Szukaj postow na stronie"
       button: "Szukaj"
+    index:
+      result: "Wyniki wyszukiwania"
+      result_nil: "Brak wynikow"
+      result_before: "Znaleziono"
+      result_after: "pasujacych wynikow"
+      more_button: "Wiecej.."
 
   comments:
     comment_form:

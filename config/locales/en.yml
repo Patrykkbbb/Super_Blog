@@ -161,6 +161,12 @@ en:
     form:
       placeholder: "Search posts on the page"
       button: "Search"
+    index:
+      result: "Search results"
+      result_nil: "No results found"
+      result_before: "Found"
+      result_after: "results"
+      more_button: "More.."
 
   comments:
     comment_form:
