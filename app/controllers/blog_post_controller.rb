@@ -26,10 +26,10 @@ class BlogPostController < ApplicationController
     def create
       @blog_post = BlogPost.new(blog_post_params)
       if @blog_post.save
-        flash.notice = "Pomyslnie utworzono #{@blog_post.title}. Post trafil do poczekalni i oczekuje na akceptacje przez administratora!"
+        flash.notice = "#{t 'blog_post.controller.create_success'}"
         redirect_to @blog_post
       else
-        flash.alert = "Blad podczas tworzenia posta"
+        flash.alert = "#{t 'blog_post.controller.create_error'}"
         render :new, status: :unprocessable_entity
       end
     end
@@ -39,20 +39,20 @@ class BlogPostController < ApplicationController
 
     def update
       if @blog_post.update(blog_post_params)
-        flash.notice = "Pomyslnie zmodyfikowano #{@blog_post.title}!"
+        flash.notice = "#{t 'blog_post.controller.update_success'}"
         redirect_to @blog_post
       else 
-        flash.alert = "Blad podczas modyfikowania tresci"
+        flash.alert = "#{t 'blog_post.controller.update_error'}"
         render :edit, status: :unprocessable_entity
       end
     end
 
     def destroy
       if @blog_post.destroy
-        flash.notice = "Pomyslnie usunieto #{@blog_post.title}!"
+        flash.notice = "#{t 'blog_post.controller.destroy_success'}"
         redirect_to root_path, status: :see_other
       else 
-        flash.alert = "Nie mozna usunac #{@blog_post.title}"
+        flash.alert = "#{t 'blog_post.controller.destroy_error'}"
       end
     end 
 
@@ -65,13 +65,13 @@ class BlogPostController < ApplicationController
       begin
         @blog_post = BlogPost.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-        flash.alert = "BLAD: Nie znaleziono takiego adresu!"
+        flash.alert = "#{t 'blog_post.controller.find_error'}"
         redirect_to root_path
       end
     end
 
     def authenticate_user!
-      redirect_to new_user_session_path, alert: "Musisz byc zalogowany" unless user_signed_in?
+      redirect_to new_user_session_path, alert: "#{t 'blog_post.controller.auth_alert'}" unless user_signed_in?
     end
 
 end

@@ -4,14 +4,13 @@
     </div>
 
     <div>
-      <%= form.label :title %>
+      <%= form.label :"#{t "blog_post.create_form.title"}" %>
       <%= form.text_field :title %>
       <% @blog_post.errors.full_messages_for(:title).each do |message| %>
         <div><%= message %></div>
       <% end %>
     </div>
     <div>
-      <%= form.label :content %>
       <%= form.rich_text_area :content %>
       <% @blog_post.errors.full_messages_for(:content).each do |message| %>
         <div><%= message %></div>
@@ -25,8 +24,8 @@
     <% if current_user.admin? %>
     <div>
       <%= form.label :status %>
-      <%= form.select :status, Opublikowany: 'published', Oczekujacy: 'pending' %>
+      <%= form.select :status, "#{t "blog_post.create_form.pub_status"}": 'published', "#{t "blog_post.create_form.pend_status"}": 'pending' %>
       </div>
     <% end %>
-    <%= form.submit "Zapisz" %>
+    <%= form.submit (t("blog_post.create_form.save")) %>
 <% end %>

@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= t "devise.registrations.edit.info" %> <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -9,34 +9,35 @@
   </div>
 
   <div>
-    <%= f.label :nickname %><br />
+    <%= f.label :"#{t "devise.registrations.edit.nickname" }" %><br />
     <%= f.text_field :nickname %>
   </div>
 
   <div>
-    <%= f.label :first_name %>
+    <%= f.label :"#{t "devise.registrations.edit.first_name" }" %>
     <%= f.text_field :first_name %>
   </div>
 
   <div>
-    <%= f.label :last_name %>
+    <%= f.label :"#{t "devise.registrations.edit.last_name" }" %>
     <%= f.text_field :last_name %>
   </div>
 
   <div>
+    <%= f.label :"#{t "devise.registrations.edit.avatar_label" }" %>
     <%= f.file_field :avatar, direct_upload: true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div><%= t "devise.registrations.edit.confirmation" %> <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>(<%= t "devise.registrations.edit.pass_helper" %>)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> <%= t "devise.registrations.edit.char_min"%></em>
     <% end %>
   </div>
 
@@ -46,17 +47,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>(<%= t "devise.registrations.edit.pass_helper2" %>)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "#{t "devise.registrations.edit.button"}" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+<% if current_user.admin? %>
+  <h3><%= t "devise.registrations.edit.del_account"%></h3>
+  <div><%= button_to "#{t "devise.registrations.edit.del_button"}", registration_path(resource_name), data: { confirm: "#{t "devise.registrations.edit.confirm"}", turbo_confirm: "#{t "devise.registrations.edit.confirm"}" }, method: :delete %></div>
+<% end %>
+<%= link_to "#{t "devise.registrations.edit.back"}", :back %>

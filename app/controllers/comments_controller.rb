@@ -6,17 +6,17 @@ class CommentsController < ApplicationController
       @blog_post = BlogPost.find(params[:blog_post_id])
       @comment = @blog_post.comments.create(comment_params)
       if @comment.save
-        redirect_to blog_post_path(@blog_post), notice: "Dodano komentarz"
+        redirect_to blog_post_path(@blog_post), notice: "#{t "comments.controller.add_notice"}"
       else 
-        redirect_to blog_post_path(@blog_post), alert: "Nie mozna dodac komentarza"
+        redirect_to blog_post_path(@blog_post), alert: "#{t "comments.controller.add_alert"}"
       end
     end
 
     def destroy 
       if @comment.destroy
-        redirect_to blog_post_path(@blog_post), notice: "Komentarz zostal usuniety"
+        redirect_to blog_post_path(@blog_post), notice: "#{t "comments.controller.destroy_notice"}"
       else 
-        redirect_to blog_post_path(@blog_post), alert: "Nie mozna usunac komentarza"
+        redirect_to blog_post_path(@blog_post), alert: "#{t "comments.controller.destroy_alert"}"
       end
     end
 

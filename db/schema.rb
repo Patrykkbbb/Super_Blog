@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_19_085647) do
     t.string "nickname"
     t.string "first_name"
     t.string "last_name"
+    t.string "avatar", default: "user.png"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -73,8 +74,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_19_085647) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "views"
-    t.bigint "user_id", null: false
     t.string "status", default: "pending"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_blog_posts_on_user_id"
   end
 
@@ -104,6 +105,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_19_085647) do
     t.datetime "confirmed_at"
     t.string "confirmation_token"
     t.datetime "confirmation_sent_at"
+    t.string "avatar", default: "user.png"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

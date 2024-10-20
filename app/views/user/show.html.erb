@@ -1,36 +1,34 @@
-<h2> hello </h2>
-
 <%= image_tag @user.avatar if @user.avatar.present? %>
 
-<h4>Nazwa uzytkownika: <%= @user.nickname %></h4>
+<h4><%= t "user.show.name" %>: <%= @user.nickname %></h4>
 <% if @user.admin? %>
-<p><i> Administrator </i></p>
+<p><i> <%= t "user.show.admin" %> </i></p>
 <% else %>
-<p><i> Uzytkownik </i></p>
+<p><i> <%= t "user.show.user" %> </i></p>
 <% end %>
 
 <% if @user.first_name == nil %>
-<h4>Imie: brak </h4>
+<h4><%= t "user.show.first_name_label" %>: <%= t "user.show.first_name" %> </h4>
 <% else %>
-<h4>Imie: <%= @user.first_name %></h4>
+<h4><%= t "user.show.first_name_label" %>: <%= @user.first_name %></h4>
 <% end %>
 
 <% if @user.first_name == nil %>
-<h4>Nazwisko: brak </h4>
+<h4><%= t "user.show.last_name_label" %>: <%= t "user.show.last_name" %> </h4>
 <% else %>
-<h4>Nazwisko: <%= @user.last_name %></h4>
+<h4><%= t "user.show.last_name_label" %>: <%= @user.last_name %></h4>
 <% end %>
 
 <h4>Email: <%= @user.email %></h4>
 
 <hr>
 
-<h3> Posty Uzytkownika <%= @user.nickname %> </h3>
+<h3> <%= t "user.show.posts" %> <%= @user.nickname %> </h3>
 
     <table>
     <tr>
-        <th>Nazwa Posta</th>
-        <th>Wyswietlenia</th>
+        <th><%= t "user.show.title" %></th>
+        <th><%= t "user.show.views" %></th>
     </tr>
     <% @blog_posts.each do |blog_posts| %>
     <tr>
@@ -41,10 +39,10 @@
     </table> 
 <br>
 <% if current_user.id == @user.id %>
-<%= link_to "Edytuj profil", edit_user_registration_path %>
+<%= link_to "Edytuj profil", edit_user_registration_path(user.id) %>
 <% elsif current_user.admin? %>
-<%= link_to "Edytuj profil", edit_user_registration_path %>
+    <%= link_to "Usun", @User, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 <% end %>
 <br><br>
 <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
-<%= link_to "Cofnij", :back %>
+<%= link_to "#{t "user.show.button"}", :back %>

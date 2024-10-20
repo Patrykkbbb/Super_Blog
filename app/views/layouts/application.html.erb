@@ -18,23 +18,32 @@
   </head>
 
   <body>
+    <%= link_to "🇬🇧", url_for(locale: :en) %>
+    <%= link_to "🇵🇱", url_for(locale: :pl) %>
+
+    <p><%= t "hello" %></p>
+    <hr>
     <br>
     <%= render "search/form" %>
     <% if user_signed_in? %>
       <% if current_user.admin? %>
-        <%= link_to "Panel administratora", admin_dashboard_path %>
+        <%
+=begin%>
+ <%= link_to "Panel administratora", admin_dashboard_path %> 
+<%
+=end%>
       <% end %>
         <% if current_user.admin? %>
-          <p> Zalogowany jako: <b> <%= current_user.nickname %> (Administrator) </b></p>
+          <p> <%= t "application.body.logged_as"%>: <b> <%= current_user.nickname %> (Administrator) </b></p>
         <% else %>
-          <p> Zalogowany jako: <b> <%= current_user.nickname %> </b></p>
+          <p> <%= t "application.body.logged_as"%>: <b> <%= current_user.nickname %> </b></p>
         <% end %>
-      <%= link_to "profil", user_path(current_user.id) %>
-      <%= link_to "edytuj", edit_user_registration_path %>
-      <%= button_to "Wyloguj", destroy_user_session_path, :method => :delete %>
+      <%= link_to (t ("application.body.profile")), user_path(current_user.id) %>
+      <%= link_to (t ("application.body.edit")), edit_user_registration_path %>
+      <%= button_to (t ("application.body.logout")), destroy_user_session_path, :method => :delete %>
     <% else %>
-      <%= link_to "Zaloguj", new_user_session_path %>
-      <%= link_to "Rejestracja", new_user_registration_path %>
+      <%= link_to (t ("application.body.login")), new_user_session_path %>
+      <%= link_to (t ("application.body.signin")), new_user_registration_path %>
     <% end %>
     <div><%= notice if notice %></div>
     <div><%= alert if alert %></div>

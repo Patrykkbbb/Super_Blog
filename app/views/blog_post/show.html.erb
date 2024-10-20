@@ -1,32 +1,31 @@
-
 <%= @blog_post.user_id %>
-<h3> Autor: <%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></h3>
+<h3> <%= t "blog_post.show.author"%>: <%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></h3>
 
 <%= image_tag @blog_post.user.avatar if @blog_post.user.avatar.present? %>
 <h3><%= @blog_post.title %></h3>
 <p><%= @blog_post.content %></p>
 <% if @blog_post.status == "pending" %>
-  <p><i> Status: Oczekujacy na dodanie</i></p>
+  <p><i> Status: <%= t "blog_post.show.pend_status"%></i></p>
 <% else %>
-  <p><i> Status: Opublikowany</i></p>
+  <p><i> Status: <%= t "blog_post.body.pub_status"%></i></p>
 <% end %>
-<p> Post Wyswietlono <%= @blog_post.views %> razy <p>
+<p> <%= t "blog_post.show.views" %>: <%= @blog_post.views %> <p>
 
 <hr>
-<h3> Komentarze </h3>
+<h3> <%= t "blog_post.show.comments" %> </h3>
 <div>
   <% @blog_post.comments.each do |comments| %>
     <%= link_to comments.commenter, user_path(comments.user_id) %><br>
     <%= comments.body %><br>
     <% if current_user.id == comments.user_id %>
-      <%= link_to "usun", blog_post_comment_path(@blog_post, comments) , data: {
+      <%= link_to (t("blog_post.body.delete")), blog_post_comment_path(@blog_post, comments) , data: {
         turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
+        turbo_confirm: "#{t "comments.comment_form.confirm"}"
       } %><br><br>
     <% elsif current_user.admin? %>
-      <%= link_to "usun", blog_post_comment_path(@blog_post, comments) , data: {
+      <%= link_to (t("blog_post.body.delete")), blog_post_comment_path(@blog_post, comments) , data: {
         turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
+        turbo_confirm: "#{t "comments.comment_form.confirm"}"
       } %><br><br>
     <% end %>
   <% end %>
@@ -34,7 +33,7 @@
 </div>
 
 <hr>
-<h3> Skomentuj </h3>
+<h3> <%= t "blog_post.show.comment" %> </h3>
 <%= render "comments/form" %>
 
 <%= link_to "Cofnij", :back %>

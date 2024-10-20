@@ -11,4 +11,10 @@ class UserController < ApplicationController
       @blog_posts = @user.blog_posts
       @pagy, @blog_posts = pagy(@user.blog_posts)
     end
+
+    def destroy
+      @user = User.find(params[:id])
+      @user.destroy
+      redirect_to user_list_path
+    end
 end

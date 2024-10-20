@@ -1,31 +1,196 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
   hello: "Hello world"
+
+  title: 
+
+  application:
+    body:
+      logged_as: "Logged as"
+      profile: "Profile"
+      edit: "Edit profile"
+      logout: "Logout"
+      login: "Sign in"
+      signin: "Sign up"
+    
+  blog_post:
+    index: 
+      create: "Create new post"
+      pending: "Pending posts"
+      users_list: "Users list"
+      about: "About me"
+
+    body:
+      edit: "Edit"
+      delete: "Delete"
+      confirm: "Are you sure you want to delete"
+      pub_status: "Published"
+      date: "Post Date"
+
+    show:
+      author: "Author"
+      pend_status: "Awaiting Approval"
+      comments: "Comments"
+      views: "Views"
+      comment: "Comment"
+      back: "Cofnij"
+
+    pending:
+      information: "Posts Awaiting Administrator Approval"      
+      edit: "Edit"
+      delete: "Delete"
+      confirm: "Are you sure you want to delete"
+      date: "Post Date"
+      pend_status: "Awaiting Approval"
+
+    controller:
+      create_success: "Successfully created a post. The post has been sent to the queue and is awaiting approval by the administrator."
+      create_error: "Error while creating the post."
+      update_success: "Post successfully modified."
+      update_error: "Error while editing the content."  
+      destroy_success: "Post successfully deleted."  
+      destroy_error: "Cannot delete the post."  
+      find_error: "Post not found"
+      auth_alert: "You must be logged in!"
+
+    new:
+      information: "Create new post"
+      back: "Back"
+
+    create_form:
+      title: "Post title"
+      pub_status: "Published"
+      pend_status: "Pending"
+      save: "Save"
+
+    edit:
+      information: "Edit"
+      back: "Back"
+
+  devise:
+    confirmations:
+      confirm: "Resend confirmation instructions"  
+      button: "Send"  
+
+    mailer:
+      confirmation_instructions:
+        welcome: "Welcome" 
+        message: "You can confirm your account email through the link below"  
+        confirm: "Confirm my account"
+
+      email_changed:
+        welcome: "Hello"
+        message_before: "We're contacting you to notify you that your email is being changed to"
+        message_after: "We're contacting you to notify you that your email has been changed to"
+
+      password_changed:
+        welcome: "Hello"
+        message: "We're contacting you to notify you that your password has been changed."
+
+      reset_password:
+        welcome: "Hello"
+        message: "Someone has requested a link to change your password. You can do this through the link below."
+        button: "Change my password"
+        message1: "If you didn't request this, please ignore this email."
+        message2: "Your password won't change until you access the link above and create a new one."
+
+      unlock_instructions:
+        welcome: "Hello"
+        message1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        message2: "Click the link below to unlock your account"
+        button: "Unlock my account"
+
+    passwords:
+      edit:
+        info: "Change your password" 
+        label: "New password"
+        min_info: "characters minimum"
+        new_pass: "New Password"
+        confirm: "Confirm new password"
+        submit: "Change my password"
+
+      new:
+        info: "Forgot your password" 
+        submit: "Send me reset password instructions"
+
+    registrations:
+      edit: 
+        info: "edit"
+        nickname: "Nickname"
+        first_name: "First name"
+        last_name: "Last name"
+        avatar_label: "Avatar"
+        confirmation: "Currently waiting confirmation for:"
+        pass_helper: "leave blank if you don't want to change it"
+        new_pass: "New password"
+        char_min: "characters minimum"
+        pass_helper2: "we need your current password to confirm your changes"
+        curr_pass: "current password"
+        button: "Save"
+        del_account: "Delete user account" 
+        del_button: "Delete account"
+        confirm: "Are you sure?"
+        back: "Cofnij"  
+      new:
+        sign_up: "Sign up"
+        nick_label: "Nickname"
+        email_label: "Email"
+        pass_label: "Password"
+        pass_helper: "characters minimum"
+        confirm_label: "Confirm password"
+        button: "Sign up!"
+
+    sessions:
+      new:
+        login: "Log in"
+        email: "Email address"
+        password: "Password"
+        remember: "Remember me"
+        button: "Log in"
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot: "Forgot your password?"
+        confirmation: "Didn't receive confirmation instructions?"
+        unlock: "Didn't receive unlock instructions?"
+    unlocks:
+      new:
+        resend: "Resend unlock instructions"
+
+  search:
+    form:
+      placeholder: "Search posts on the page"
+      button: "Search"
+    index:
+      result: "Search results"
+      result_nil: "No results found"
+      result_before: "Found"
+      result_after: "results"
+      more_button: "More.."
+
+  user:
+    index:
+      info: "User list on the page"
+      name: "Username"
+    show:
+      name: "Username"
+      admin: "Admin"
+      user: "User"
+      first_name_label: "First name"
+      first_name: "None"
+      last_name_label: "Last name"
+      last_name: "None"
+      posts: "User posts"
+      title: "Post title"
+      views: "Views"    
+      button: "Back"  
+
+  comments:
+    comment_form:
+      comment: "Comment"
+      confirm: "Are you want to delete the comment?"
+    controller:
+      add_notice: "Coment added"
+      add_alert: "Cannot add comment"
+      destroy_notice: "Comment has been deleted"
+      destroy_alert: "Cannot delete comment"

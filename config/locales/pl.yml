@@ -1,0 +1,195 @@
+pl:
+  hello: "Witaj"
+
+  title: 
+
+  application:
+    body:
+      logged_as: "Zalogowany Jako"
+      profile: "Profil"
+      edit: "Edytuj profil"
+      logout: "Wyloguj"
+      login: "Zaloguj"
+      signin: "Rejestracja"
+
+  blog_post:
+    index: 
+      create: "Utworz nowy post"
+      pending: "Poczekalnia"
+      users_list: "Lista uzytkownikow"
+      about: "O mnie"
+
+    body:
+      edit: "Edytuj"
+      delete: "Usun"    
+      confirm: "Czy na pewno chcesz usunac"  
+      pub_status: "Opublikowany"
+      date: "Data utworzenia"
+    
+    show:
+      author: "Autor"
+      pend_status: "Oczekujacy na dodanie"
+      comments: "Komentarze"
+      views: "Wyswietlenia"
+      comment: "Skomentuj"
+      back: "Cofnij"
+
+    pending:
+      information: "Posty oczekujace na akceptacje"
+      edit: "Edytuj"
+      delete: "Usun"    
+      confirm: "Czy na pewno chcesz usunac"  
+      date: "Data utworzenia"
+      pend_status: "Oczekujacy na dodanie"
+
+
+    controller:
+      create_success: "Pomyslnie utworzono post. Post trafil do poczekalni i oczekuje na akceptacje przez administratora"
+      create_error: "Blad podczas tworzenia posta"
+      update_success: "Pomyslnie zmodyfikowano post"
+      update_error: "Blad podczas edytowania tresci"
+      destroy_success: "Pomyslnie usunieto post."  
+      destroy_error: "Nie mozna usunac posta."  
+      find_error: "Nie odnaleziono takiego posta"
+      auth_alert: "Musisz byc zalogowany!"
+
+    new:
+      information: "Stworz nowy post"
+      back: "Cofnij"
+
+    create_form:
+      title: "Tytul Posta"
+      pub_status: "Opublikowany"
+      pend_status: "Oczekujacy"
+      save: "Zapisz"
+
+    edit:
+      information: "Edytuj"
+      back: "Cofnij"
+
+  devise:
+    confirmations:
+      confirm: "Wyslij ponownie instrukcje potwierdzenia"
+      button: "Wyslij"
+
+    mailer:
+      confirmation_instructions:
+        welcome: "Witaj" 
+        message: "Mozesz potwierdzic adres e-mail swojego konta za pomoca ponizszego linku"
+        confirm: "Potwierdz"
+
+      email_changed:
+        welcome: "Witaj"
+        message_before: "Kontaktujemy się z Toba, aby powiadomić Cie, że Twoj adres e-mail zostaje zmieniony na"
+        message_after: "Kontaktujemy się z Toba, aby powiadomić Cie, że Twoj adres e-mail zostal zmieniony na"
+
+      password_changed:
+        welcome: "Witaj"
+        message: "Kontaktujemy sie z Toba, aby powiadomic Cie, że Twoje haslo zostalo zmienione."
+
+      reset_password:
+        welcome: "Witaj"
+        message: "Ktos poprosil o link do zmiany Twojego hasla. Mozesz to zrobic za pomoca ponizszego linku."
+        button: "Zmien moje haslo"
+        message1: "Jesli nie prosiles o to, zignoruj te wiadomosc."
+        message2: "Twoje haslo nie zostanie zmienione, dopoki nie uzyskasz dostepu do powyzszego linku i nie utworzysz nowego."
+
+      unlock_instructions:
+        welcome: "Witaj"
+        message1: "Twoje konto zostalo zablokowane z powodu zbyt duzej liczby nieudanych prob logowania."
+        message2: "Kliknij ponizszy link, aby odblokowac swoje konto."
+        button: "Odblokuj konto"      
+
+    passwords:
+      edit:
+        info: "Zmien swoje haslo" 
+        label: "Nowe haslo"
+        min_info: "Minimalna ilosc znakow hasla"
+        new_pass: "nowe haslo"
+        confirm: "potwierdz nowe haslo"
+        submit: "Zmien haslo"
+      new:
+        info: "Zapomniales hasla" 
+        submit: "Wyslij nowe haslo"
+
+    registrations:
+      edit: 
+        info: "Edytuj"
+        nickname: "Nazwa uzytkownika"
+        first_name: "Imie"
+        last_name: "Nazwisko"
+        avatar_label: "Avatar"
+        confirmation: "Oczekuje na potwierdzenie wiadomosci email:"
+        pass_helper: "Zostaw puste jesli nie chcesz zmieniac"
+        new_pass: "Nowe haslo"
+        char_min: " - to minimalna ilosc znakow hasla"
+        pass_helper2: "Wymagane w celu potwierdzenia zmian"
+        curr_pass: "aktualne haslo"
+        button: "Zapisz"
+        del_account: "Usun konto uzytkownika" 
+        del_button: "Usun Konto"
+        confirm: "Czy na pewno chcesz usunac to konto?"     
+        back: "Cofnij"  
+      new:
+        sign_up: "Rejestracja"
+        nick_label: "Nazwa uzytkownika"
+        email_label: "Adres email"
+        pass_label: "Haslo"
+        pass_helper: " - to minimalna ilosc znakow hasla"
+        confirm_label: "Potwierdz haslo"
+        button: "Zarejestruj"
+    sessions:
+      new:
+        login: "Zaloguj"
+        email: "Adres e-mail"
+        password: "Haslo"
+        remember: "Zapamietaj mnie"
+        button: "Zaloguj"
+    shared:
+      links:
+        login: "Zaloguj"
+        signup: "Rejestracja"
+        forgot: "Nie pamietasz hasla?"
+        confirmation: "Nie otrzymales potwierdzenia hasla?"
+        unlock: "Nie otrzymales wiadomosci odblokowania konta?"
+    unlocks:
+      new:
+        resend: "Wyslij instrukcje odblokowania konta"
+
+  search:
+    form:
+      placeholder: "Szukaj postow na stronie"
+      button: "Szukaj"
+    index:
+      result: "Wyniki wyszukiwania"
+      result_nil: "Brak wynikow"
+      result_before: "Znaleziono"
+      result_after: "pasujacych wynikow"
+      more_button: "Wiecej.."
+
+  user:
+    index:
+      info: "Lista uzytkownikow na stronie"
+      name: "Nazwa uzytkownika"
+    show:
+      name: "Nazwa uzytkownika"
+      admin: "Admin"
+      user: "Uzytkownik"
+      first_name_label: "Imie"
+      first_name: "Brak"
+      last_name_label: "Nazwisko"
+      last_name: "Brak"
+      posts: "Posty uzytkownika"
+      title: "Nazwa Posta"
+      views: "Wyswietlenia"
+      button: "Cofnij"
+
+  comments:
+    comment_form:
+      comment: "Skomentuj"
+      confirm: "Czy na pewno chcesz usunac komentarz?"
+    controller:
+      add_notice: "Dodano komentarz"
+      add_alert: "Nie mozna dodac komentarza"
+      destroy_notice: "Komentarz zostal usuniety"
+      destroy_alert: "Nie mozna usunac komentarza"

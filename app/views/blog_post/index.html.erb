@@ -3,34 +3,34 @@
 
 
 <br>
-<%= link_to "Utworz nowy post", new_blog_post_path %>
-<%= link_to "Poczekalnia", pending_blog_posts_path %>
-<%= link_to "Lista uzytkownikow", user_list_path %>
-<%= link_to "O mnie", about_blog_post_path %>
+<%= link_to (t("blog_post.index.create")), new_blog_post_path %>
+<%= link_to (t("blog_post.index.pending")), pending_blog_posts_path %>
+<%= link_to (t("blog_post.index.users_list")), user_list_path %>
+<%= link_to (t("blog_post.index.about")), about_blog_post_path %>
 <hr>
 
 <% @blog_post.each do |blog_post| %>
-    <% if blog_post.status == "Opublikowany" %>
+    <% if blog_post.status == "published" %>
         <h2><%= link_to blog_post.title, blog_post_path(blog_post) %></h2>
         <p><%= blog_post.content.to_plain_text.truncate(70) %></p>
 
         <% if user_signed_in? %>
             <% if current_user.admin? %>
-                <%= link_to "Edytuj", edit_blog_post_path(blog_post) %>
-                <%= link_to "Usun", blog_post_path(blog_post), data: {
+                <%= link_to (t("blog_post.body.edit")), edit_blog_post_path(blog_post) %>
+                <%= link_to (t("blog_post.body.delete")), blog_post_path(blog_post), data: {
                     turbo_method: :delete,
-                    turbo_confirm: "Czy Na pewno chcesz usunac '#{blog_post.title}'?"
+                    turbo_confirm: "#{t "blog_post.body.confirm" } '#{blog_post.title}'?"
                 } %>
             <% elsif current_user.id == blog_post.user_id %>
-                <%= link_to "Edytuj", edit_blog_post_path(blog_post) %>
-                <%= link_to "Usun", blog_post_path(blog_post), data: {
+                <%= link_to (t("blog_post.body.edit")), edit_blog_post_path(blog_post) %>
+                <%= link_to (t("blog_post.body.delete")), blog_post_path(blog_post), data: {
                     turbo_method: :delete,
-                    turbo_confirm: "Czy Na pewno chcesz usunac '#{blog_post.title}'?"
+                    turbo_confirm: "#{t "blog_post.body.confirm" } '#{blog_post.title}'?"
                 } %>
             <% end %>
         <% end %>
-        <p><i> Status: Opublikowany </i></p>
-        <p><i>Data publikacji: <%= blog_post.updated_at %></i></p>
+        <p><i> Status: <%= t "blog_post.body.pub_status" %> </i></p>
+        <p><i> <%= t "blog_post.body.date" %>: <%= blog_post.updated_at %></i></p>
     <% end %>
 <% end %>
 
