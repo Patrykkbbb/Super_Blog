@@ -66,5 +66,8 @@ gem "pagy", "~> 9.1"
 gem 'rails-i18n', '~> 7.0', '>= 7.0.9'
 
 gem 'dartsass-sprockets'
+
 gem 'bootstrap', '~> 5.3', '>= 5.3.3'
+
 gem 'jquery-rails'
+

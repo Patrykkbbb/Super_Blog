@@ -9,7 +9,11 @@
             <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
+                    <% if blog_post.post_image.present? %>
+                        <div class="post_image_index"><%= image_tag  blog_post.post_image %></div>
+                    <% else %>
+                        <div class="post_image_index"><%= image_tag "/assets/post_placeholder.png" %></div>
+                    <% end %>
                 </div>
                 <div class="col-md-8">
                 <div class="card-body">

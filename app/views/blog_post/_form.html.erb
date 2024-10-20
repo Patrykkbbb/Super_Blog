@@ -20,6 +20,10 @@
     <% @blog_post.errors.full_messages_for(:views).each do |message| %>
       <%= message %>
     <% end %>
+
+    <div>
+      <%= form.file_field :post_image %>
+    </div>
     
     <% if current_user.admin? %>
     <div>

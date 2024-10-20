@@ -1,5 +1,7 @@
 class BlogPost < ApplicationRecord
     has_rich_text :content
+    has_one_attached :post_image
+
     has_many :comments, dependent: :destroy
     belongs_to :user
 
