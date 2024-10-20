@@ -46,5 +46,5 @@
     <%= link_to "Usun", @User, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 <% end %>
 <br><br>
-<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+<div class="pag-block"><%== pagy_nav(@pagy) if @pagy.pages > 1 %></div>
 <%= link_to "#{t "user.show.button"}", :back %>
