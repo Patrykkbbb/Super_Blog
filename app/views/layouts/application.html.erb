@@ -20,42 +20,43 @@
   <body>
 
   <nav class="navbar sticky-top bg-body-tertiary">
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-     <div class="navbar-logo"><a href="<%= root_path %>"><%= image_tag "/assets/logo.png" %></a></div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="navbar-logo"><a href="<%= root_path %>"><%= image_tag "/assets/logo.png" %></a></div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <% if user_signed_in? %>
+
+        <li class="nav-item">
+          <% if current_user.admin? %>
+            <p> <%= t "application.body.logged_as"%>: <b class="user_admin"> <%= current_user.nickname %> (Administrator) </b></p>
+          <% else %>
+            <p> <%= t "application.body.logged_as"%>: <b class="user_user"> <%= current_user.nickname %> </b></p>
+          <% end %>
+        </li>
+          <li class="nav-item">
+            <p><%= link_to (t ("application.body.profile")), user_path(current_user.id) %></p>
+          </li>
+          <li class="nav-item">
+            <%= button_to (t ("application.body.logout")), destroy_user_session_path, :method => :delete %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <p><%= link_to (t ("application.body.login")), new_user_session_path %></p>
+          </li>
+          <li class="nav-item">
+            <p><%= link_to (t ("application.body.signin")), new_user_registration_path %></p>
+          </li>
+        <% end %>
+        </ul>
+      </div>
     </div>
-  </div>
-
-</nav>
-  
-</nav>
+  </nav>
+  </nav>
 
 
   <div class="container">
@@ -67,26 +68,7 @@
     <br>
     <hr>
     <br>
-    <% if user_signed_in? %>
-      <% if current_user.admin? %>
-        <%
-=begin%>
- <%= link_to "Panel administratora", admin_dashboard_path %> 
-<%
-=end%>
-      <% end %>
-        <% if current_user.admin? %>
-          <p> <%= t "application.body.logged_as"%>: <b> <%= current_user.nickname %> (Administrator) </b></p>
-        <% else %>
-          <p> <%= t "application.body.logged_as"%>: <b> <%= current_user.nickname %> </b></p>
-        <% end %>
-      <%= link_to (t ("application.body.profile")), user_path(current_user.id) %>
-      <%= link_to (t ("application.body.edit")), edit_user_registration_path %>
-      <%= button_to (t ("application.body.logout")), destroy_user_session_path, :method => :delete %>
-    <% else %>
-      <%= link_to (t ("application.body.login")), new_user_session_path %>
-      <%= link_to (t ("application.body.signin")), new_user_registration_path %>
-    <% end %>
+
     <% if notice %>
       <div class="alert alert-success" role="alert"><%= notice %></div>
     <% elsif alert %>

@@ -64,5 +64,52 @@
     width: 80px;
  }
  
+ .nav-item{
+   margin-left: 12px;
+ }
+
+ .user_admin{
+   font-weight: 500;
+   color: #5b2b6e;
+   text-shadow: #ce74f7 4px 0px 4px;
+   cursor: pointer;
+ }
+
+ .user_user{
+   font-weight: 500;
+   color: #39730c;
+   text-shadow: #92ec4f 4px 0px 4px;
+   cursor: pointer;
+ }
+
+ .user_user:hover{
+   color: #2d5c0a;
+   text-shadow: #448a0f 6px 0px 6px;
+   transition: 1s;
+ }
+
+ .user_admin:hover{
+   color: #760aa9;
+   text-shadow: #980dd9 6px 0px 6px;
+   transition: 1s;
+ }
+
+ .nav-item p a{
+   text-decoration: none;
+   color: black;
+ }
+
+ .nav-item p a:hover{
+   color: #39730c;
+   text-shadow: #92ec4f 4px 0px 4px;
+   transition: 1s;
+ }
+
+ .nav-item button{
+   border-style: none;
+   font-size: 15px;
+ }
+
+ 
  
 //  text-shadow: #ce74f7 1px 0 15px;
