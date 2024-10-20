@@ -1,12 +1,6 @@
 
 <title><%= t "title.index" %></title>
-
-
 <br>
-<%= link_to (t("blog_post.index.create")), new_blog_post_path %>
-<%= link_to (t("blog_post.index.pending")), pending_blog_posts_path %>
-<%= link_to (t("blog_post.index.users_list")), user_list_path %>
-<%= link_to (t("blog_post.index.about")), about_blog_post_path %>
 <hr>
 
 <% @blog_post.each do |blog_post| %>
@@ -35,4 +29,5 @@
 <% end %>
 
 <hr>
+
 <%== pagy_nav(@pagy) if @pagy.pages > 1 %>

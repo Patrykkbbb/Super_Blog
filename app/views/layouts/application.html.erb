@@ -64,9 +64,7 @@
         <%= link_to "🇬🇧", url_for(locale: :en) %>
         <%= link_to "🇵🇱", url_for(locale: :pl) %>
       </div>
-  <div class="logo"><a href="<%= root_path %>"><%= image_tag "/assets/logo.png" %></a></div>
-      <br>
-      <hr>
+      <div class="logo"><a href="<%= root_path %>"><%= image_tag "/assets/logo.png" %></a></div>
       <br>
 
       <% if notice %>
@@ -74,10 +72,14 @@
       <% elsif alert %>
       <div class="alert alert-danger" role="alert"><%= alert %></div>
       <% end %>
-
+      <ul class="nav-links">
+        <li><%= link_to (t("blog_post.index.create")), new_blog_post_path %></li>
+        <li class="green"><%= link_to (t("blog_post.index.pending")), pending_blog_posts_path %></li>
+        <li><%= link_to (t("blog_post.index.users_list")), user_list_path %></li>
+        <li class="green"><%= link_to (t("blog_post.index.about")), about_blog_post_path %></li>
+      </ul>
       <%= render "search/form" %>
       <%= yield %>
-
   </div>
   </header>
 </body>
