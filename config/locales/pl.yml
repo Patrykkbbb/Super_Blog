@@ -208,3 +208,5 @@ pl:
     edit_profile: "Edycja profilu"
     register: "SuperBlog | Rejestracja"
     login: "Zaloguj"
+    user_index: "Lista uzytkownikow" 
+    user_show: "Uzytkownik"

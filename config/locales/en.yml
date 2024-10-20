@@ -209,3 +209,5 @@ en:
     edit_profile: "Edit user profile"
     register: "Registration"
     login: "Log in"
+    user_index: "Users list" 
+    user_show: "User"
