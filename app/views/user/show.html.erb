@@ -1,3 +1,5 @@
+<title><%= t "title.user_show" %> <%= @user.nickname %></title>
+
 <%= image_tag @user.avatar if @user.avatar.present? %>
 
 <h4><%= t "user.show.name" %>: <%= @user.nickname %></h4>
