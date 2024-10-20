@@ -68,7 +68,8 @@ en:
 
   devise:
     confirmations:
-      confirm: "Resend confirmation instructions"    
+      confirm: "Resend confirmation instructions"  
+      button: "Send"  
 
     mailer:
       confirmation_instructions:
@@ -155,6 +156,11 @@ en:
     unlocks:
       new:
         resend: "Resend unlock instructions"
+
+  search:
+    form:
+      placeholder: "Search posts on the page"
+      button: "Search"
 
   comments:
     comment_form:
