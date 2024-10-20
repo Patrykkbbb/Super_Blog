@@ -1,9 +1,9 @@
-<h2> Lista uzytkownikow na stronie </h2>
+<h2> <%= t "user.index.info"%> </h2>
 
 
     <table>
     <tr>
-        <th>Nazwa Uzytkownika</th>
+        <th><%= t "user.index.name"%></th>
         <th>Email</th>
     </tr>
     <% @user.each do |user| %>

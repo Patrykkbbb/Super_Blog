@@ -167,10 +167,23 @@ pl:
       result_after: "pasujacych wynikow"
       more_button: "Wiecej.."
 
+  user:
+    index:
+      info: "Lista uzytkownikow na stronie"
+      name: "Nazwa uzytkownika"
+    show:
+      name: "Nazwa uzytkownika"
+      admin: "Admin"
+      user: "Uzytkownik"
+      first_name_label: "Imie"
+      first_name: "Brak"
+      last_name_label: "Nazwisko"
+      last_name: "Brak"
+      posts: "Posty uzytkownika"
+      title: "Nazwa Posta"
+      views: "Wyswietlenia"
+      button: "Cofnij"
+
   comments:
     comment_form:
       comment: "Skomentuj"
-
-  # search:
-    # comment_form:
-      # comment: "Skomentuj"

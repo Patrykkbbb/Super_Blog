@@ -168,6 +168,23 @@ en:
       result_after: "results"
       more_button: "More.."
 
+  user:
+    index:
+      info: "User list on the page"
+      name: "Username"
+    show:
+      name: "Username"
+      admin: "Admin"
+      user: "User"
+      first_name_label: "First name"
+      first_name: "None"
+      last_name_label: "Last name"
+      last_name: "None"
+      posts: "User posts"
+      title: "Post title"
+      views: "Views"    
+      button: "Back"  
+
   comments:
     comment_form:
       comment: "Comment"
