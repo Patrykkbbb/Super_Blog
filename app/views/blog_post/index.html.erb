@@ -5,26 +5,40 @@
 
 <% @blog_post.each do |blog_post| %>
     <% if blog_post.status == "published" %>
-        <h2><%= link_to blog_post.title, blog_post_path(blog_post) %></h2>
-        <p><%= blog_post.content.to_plain_text.truncate(70) %></p>
-
-        <% if user_signed_in? %>
-            <% if current_user.admin? %>
-                <%= link_to (t("blog_post.body.edit")), edit_blog_post_path(blog_post) %>
-                <%= link_to (t("blog_post.body.delete")), blog_post_path(blog_post), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "#{t "blog_post.body.confirm" } '#{blog_post.title}'?"
-                } %>
-            <% elsif current_user.id == blog_post.user_id %>
-                <%= link_to (t("blog_post.body.edit")), edit_blog_post_path(blog_post) %>
-                <%= link_to (t("blog_post.body.delete")), blog_post_path(blog_post), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "#{t "blog_post.body.confirm" } '#{blog_post.title}'?"
-                } %>
-            <% end %>
-        <% end %>
-        <p><i> Status: <%= t "blog_post.body.pub_status" %> </i></p>
-        <p><i> <%= t "blog_post.body.date" %>: <%= blog_post.updated_at %></i></p>
+        <div class="cont">
+            <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <h3><%= link_to blog_post.title, blog_post_path(blog_post) %></h3>
+                    <p><%= blog_post.content.to_plain_text.truncate(70) %></p>
+                    <p class="card-text"><small class="text-body-secondary"><%= t "blog_post.body.date" %>: <%= blog_post.updated_at %></small></p>
+                    <p class="card-text"><small class="text-body-secondary">Status: <%= t "blog_post.body.pub_status" %></small></p>
+                <% if user_signed_in? %>
+                <% if current_user.admin? %>
+                  <div class="btn-actions">
+                    <div class="btn-action-edit"><%= link_to (t("blog_post.body.edit")), edit_blog_post_path(blog_post) %></div><br>
+                    <div class="btn-action-del"><%= link_to (t("blog_post.body.delete")), blog_post_path(blog_post), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "#{t "blog_post.body.confirm" } '#{blog_post.title}'?"
+                    } %> </div> 
+                  </div>
+                <% elsif current_user.id == blog_post.user_id %>
+                    <div class="btn-action-edit"><%= link_to (t("blog_post.body.edit")), edit_blog_post_path(blog_post) %></div><br>
+                    <div class="btn-action-del"><%= link_to (t("blog_post.body.delete")), blog_post_path(blog_post), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "#{t "blog_post.body.confirm" } '#{blog_post.title}'?"
+                    } %> </div> 
+                    <% end %>
+                <% end %>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
     <% end %>
 <% end %>
 
