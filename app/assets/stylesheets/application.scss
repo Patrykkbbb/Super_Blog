@@ -21,6 +21,7 @@
  body{
     background-image: asset-url('background.png');
     background-size: cover;
+    background-attachment: fixed;
  }
 
  .container{
@@ -44,6 +45,7 @@
 
 
 /* header/navbar */
+
 
 .nav-links li{
   display: inline;
@@ -71,6 +73,13 @@
   text-shadow: #980dd9 6px 0px 6px;
   transition: 0.3s;
 }
+
+@media only screen and (max-width: 770px){
+  .nav-links a{font-size: 14px;}
+ }
+ @media only screen and (max-width: 540px){
+  .nav-links a{font-size: 10px;}
+ }
 
 
 .logo img{
@@ -139,9 +148,16 @@
  }
 
  .nav-item button{
+   background: none;
    border-style: none;
    font-size: 15px;
  }
+
+ .nav-item button:hover{
+  color: #760aa9;
+  text-shadow: #980dd9 4px 0px 4px;
+  transition: 0.3s;
+}
 
  /* Search form */
 
