@@ -188,3 +188,9 @@ en:
   comments:
     comment_form:
       comment: "Comment"
+      confirm: "Are you want to delete the comment?"
+    controller:
+      add_notice: "Coment added"
+      add_alert: "Cannot add comment"
+      destroy_notice: "Comment has been deleted"
+      destroy_alert: "Cannot delete comment"

@@ -187,3 +187,9 @@ pl:
   comments:
     comment_form:
       comment: "Skomentuj"
+      confirm: "Czy na pewno chcesz usunac komentarz?"
+    controller:
+      add_notice: "Dodano komentarz"
+      add_alert: "Nie mozna dodac komentarza"
+      destroy_notice: "Komentarz zostal usuniety"
+      destroy_alert: "Nie mozna usunac komentarza"

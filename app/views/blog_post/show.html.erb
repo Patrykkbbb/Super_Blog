@@ -20,12 +20,12 @@
     <% if current_user.id == comments.user_id %>
       <%= link_to (t("blog_post.body.delete")), blog_post_comment_path(@blog_post, comments) , data: {
         turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
+        turbo_confirm: "#{t "comments.comment_form.confirm"}"
       } %><br><br>
     <% elsif current_user.admin? %>
       <%= link_to (t("blog_post.body.delete")), blog_post_comment_path(@blog_post, comments) , data: {
         turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
+        turbo_confirm: "#{t "comments.comment_form.confirm"}"
       } %><br><br>
     <% end %>
   <% end %>
