@@ -1,7 +1,7 @@
 <div class="container">
     <title><%= t "title.new" %></title>
     <div class="new-post-container">
-    <h2> <%= t "blog_post.new.information" %> </h2>
+    <h2 class="register-title"> <%= t "blog_post.new.information" %> </h2>
     <%= render "form", blog_post:@blog_post %>
     <br>
     <%= link_to (t("blog_post.new.back")), root_path, class: "back-button" %>

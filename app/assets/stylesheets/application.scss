@@ -743,18 +743,12 @@ textarea{
 
 }
 
-/* devise register new */
+/* devise  */
 
 .container-register{
   margin-left: 20rem;
 }
 
-/* Footer */
-.bottom-page{
-  margin-top: 1rem;
-  background-color: black;
-  height: 5rem;
-}
 
 .register-title{
   font-weight: 500;
@@ -766,4 +760,32 @@ textarea{
   font-weight: 500;
   color: #5b2b6e;
   text-shadow: #ce74f7 1px 0px 3px;
+}
+
+
+/* Footer */
+
+.bottom-page{
+  margin-top: 1rem;
+  background-color: black;
+  height: 7rem;
+}
+
+.contact p{
+  margin-left: 5rem;
+  color: white;
+}
+
+.contact a{
+  text-decoration: none;
+  color: white;
+}
+
+.row2{
+  margin-bottom: -20px;
+}
+
+.footer-link:hover{
+  color: #92ec4f;
+  transition: 0.3s;
 }

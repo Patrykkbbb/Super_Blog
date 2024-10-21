@@ -211,3 +211,6 @@ pl:
     login: "Zaloguj"
     user_index: "Lista uzytkownikow" 
     user_show: "Uzytkownik"
+
+  footer:
+    contact: "Kontakt"

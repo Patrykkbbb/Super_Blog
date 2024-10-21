@@ -58,7 +58,7 @@
     </nav>
 
 
-    <div class="container">
+    <div class="container row2">
       <div class="langs">
         <%= link_to "🇬🇧", url_for(locale: :en) %>
         <%= link_to "🇵🇱", url_for(locale: :pl) %>
@@ -81,9 +81,19 @@
 
 
         <%= yield %>
+        <br>
     </div>
       <footer class="bottom-page">
-        
+        <div class="contact">
+         <br>
+         <p>© 2024 Patryk Blachowicz.</p>
+           <p>
+            <%= t "footer.contact"%>: 
+            <a class="footer-link" href="mailto:patrix9696@gmail.com">patrix9696@gmail.com</a> |
+            <a class="footer-link" href="https://github.com/Patrykkbbb">GitHub</a>
+          </p>
+          <p><b> </b></p>
+        </div>
       </footer>
 </body>
 </html>

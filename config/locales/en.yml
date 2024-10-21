@@ -212,3 +212,6 @@ en:
     login: "Log in"
     user_index: "Users list" 
     user_show: "User"
+
+  footer:
+    contact: "Contact"
