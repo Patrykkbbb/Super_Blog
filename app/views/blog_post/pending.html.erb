@@ -1,6 +1,8 @@
 <title><%= t "title.pending" %></title>
 
-<h2> <%= t 'blog_post.pending.information' %> </h2>
+<div class="alert alert-warning" role="alert">
+    <%= t 'blog_post.pending.information' %>
+</div>
 
 <% @blog_post.each do |blog_post| %>
     <% if blog_post.status == "pending" %>
