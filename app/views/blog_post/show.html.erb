@@ -1,35 +1,47 @@
 <title><%= t "title.show" %> <%= @blog_post.title %></title>
-
-<div class="card mb-3">
-  <% if @blog_post.post_image.present? %>
-    <div class="post_image_show"><%= image_tag  @blog_post.post_image %></div>
-  <% else %>
-    <div class="post_image_show"><%= image_tag "/assets/post_placeholder.png" %></div>
-  <% end %>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <% if @blog_post.user.admin? %>
-    <p class="card-title">
-      <p><%= t "blog_post.show.author"%>: <b class="show_authorpost_admin"><%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></b></p>
+<br>
+<hr>
+<br>
+<div class="card_post_show">
+  <div class="card mb-3">
+    <% if @blog_post.post_image.present? %>
+      <div class="post_image_show"><%= image_tag  @blog_post.post_image %></div>
     <% else %>
-      <p><%= t "blog_post.show.author"%>: <b class="show_authorpost_user"><%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></b></p>
+      <div class="post_image_show"><%= image_tag "/assets/post_placeholder.png" %></div>
     <% end %>
-    
-    <p class="card-text"><%= @blog_post.title %></p>
-    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title"><%= @blog_post.title %></h5>
+      <% if @blog_post.user.admin? %>
+      <p class="card-title">
+        <p><%= t "blog_post.show.author"%>: <b class="show_authorpost_admin"><%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></b></p>
+      <% else %>
+        <p><%= t "blog_post.show.author"%>: <b class="show_authorpost_user"><%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></b></p>
+      <% end %>
+      
+      <p class="card-text"><%= @blog_post.content %></p>
+      
+      <p class="card-text"><small class="text-body-secondary">
+        <% if @blog_post.status == "pending" %>
+          <p><i> Status: <%= t "blog_post.show.pend_status"%></i></p>
+        <% else %>
+          <p><i> Status: <%= t "blog_post.body.pub_status"%></i></p>
+        <% end %>
+      </small></p>
+      <p class="card-text"><small class="text-body-secondary"> <%= t "blog_post.show.views" %>: <%= @blog_post.views %> </small></p>
+    </div>
   </div>
 </div>
-<h3> <%= t "blog_post.show.author"%>: <%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></h3>
 
-<%= image_tag @blog_post.user.avatar if @blog_post.user.avatar.present? %>
-<h3><%= @blog_post.title %></h3>
-<p><%= @blog_post.content %></p>
-<% if @blog_post.status == "pending" %>
-  <p><i> Status: <%= t "blog_post.show.pend_status"%></i></p>
-<% else %>
-  <p><i> Status: <%= t "blog_post.body.pub_status"%></i></p>
-<% end %>
-<p> <%= t "blog_post.show.views" %>: <%= @blog_post.views %> <p>
+
+
+<%
+=begin%>
+  
+<%
+=end%>
+
+
 
 <hr>
 <h3> <%= t "blog_post.show.comments" %> </h3>
