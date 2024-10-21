@@ -156,7 +156,7 @@
 
  /* Search form */
 
-@media only screen and (max-width: 1950px){
+@media only screen and (max-width: 4450px){
   .form-control{width: 40rem;}
 }
 
@@ -614,4 +614,64 @@ textarea{
   color: #2d5c0a;
   text-shadow: #448a0f 1px 0px 3px;
   transition: 0.3s;
+}
+
+/* Users - profile */
+
+@media only screen and (max-width: 4000px){
+  .admin_profile_avatar img{width: 20rem;}
+}
+
+@media only screen and (max-width: 1520px){
+  .admin_profile_avatar img{width: 20rem;}
+}
+@media only screen and (max-width: 1320px){
+  .admin_profile_avatar img{width: 20rem;}
+}
+@media only screen and (max-width: 960px){
+  .admin_profile_avatar img{width: 15rem;}
+}
+@media only screen and (max-width: 770px){
+  .admin_profile_avatar img{width: 10rem;}
+}
+@media only screen and (max-width: 540px){
+  .admin_profile_avatar img{width: 7rem;}
+}
+
+
+@media only screen and (max-width: 4000px){
+  .user_profile_avatar img{width: 20rem;}
+}
+
+@media only screen and (max-width: 1520px){
+  .user_profile_avatar img{width: 20rem;}
+}
+@media only screen and (max-width: 1320px){
+  .user_profile_avatar img{width: 20rem;}
+}
+@media only screen and (max-width: 960px){
+  .user_profile_avatar img{width: 15rem;}
+}
+@media only screen and (max-width: 770px){
+  .user_profile_avatar img{width: 10rem;}
+}
+@media only screen and (max-width: 540px){
+  .user_profile_avatar img{width: 7rem;}
+}
+
+
+.user_profile_avatar img{
+  padding: 23px;
+  border: 2px solid #90e765; 
+  border-radius: 9px;
+  background-color: #bfbfbf;
+  box-shadow: 0 0 18px #cff5bd;
+}
+
+.admin_profile_avatar img{
+  padding: 23px;
+  border: 2px solid #e1a1ff; 
+  border-radius: 9px;
+  background-color: #bfbfbf;
+  box-shadow: 0 0 18px #ce74f7;
 }

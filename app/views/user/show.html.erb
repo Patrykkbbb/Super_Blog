@@ -1,27 +1,41 @@
 <title><%= t "title.user_show" %> <%= @user.nickname %></title>
 
-<%= image_tag @user.avatar if @user.avatar.present? %>
+<div class="profile_body">
 
-<h4><%= t "user.show.name" %>: <%= @user.nickname %></h4>
-<% if @user.admin? %>
-<p><i> <%= t "user.show.admin" %> </i></p>
-<% else %>
-<p><i> <%= t "user.show.user" %> </i></p>
-<% end %>
+    <% if @user.avatar.present? %>
+        <% if @user.admin? %>
+            <div class="admin_profile_avatar"><%= image_tag @user.avatar %></div>
+        <% else %>
+            <div class="user_profile_avatar"><%= image_tag @user.avatar %></div>
+        <% end %>
+    <% else %>
+        <% if @user.admin? %>
+            <div class="admin_profile_avatar"><%= image_tag "/assets/user_placeholder.png" %></div>
+        <% else %>
+            <div class="user_profile_avatar"><%= image_tag "/assets/user_placeholder.png" %></div>
+        <% end %>
+    <% end %>
+    <% if @user.admin? %>
+        <h6><%= t "user.show.name" %>: <%= @user.nickname %></h6>
+        <p><i> <%= t "user.show.admin" %> </i></p>
+    <% else %>
+        <h6><%= t "user.show.name" %>: <%= @user.nickname %></h6>
+        <p><i> <%= t "user.show.user" %> </i></p>
+    <% end %>
 
-<% if @user.first_name == nil %>
-<h4><%= t "user.show.first_name_label" %>: <%= t "user.show.first_name" %> </h4>
-<% else %>
-<h4><%= t "user.show.first_name_label" %>: <%= @user.first_name %></h4>
-<% end %>
+    <% if @user.first_name == nil %>
+    <h4><%= t "user.show.first_name_label" %>: <%= t "user.show.first_name" %> </h4>
+    <% else %>
+    <h4><%= t "user.show.first_name_label" %>: <%= @user.first_name %></h4>
+    <% end %>
 
-<% if @user.first_name == nil %>
-<h4><%= t "user.show.last_name_label" %>: <%= t "user.show.last_name" %> </h4>
-<% else %>
-<h4><%= t "user.show.last_name_label" %>: <%= @user.last_name %></h4>
-<% end %>
-
-<h4>Email: <%= @user.email %></h4>
+    <% if @user.first_name == nil %>
+    <h4><%= t "user.show.last_name_label" %>: <%= t "user.show.last_name" %> </h4>
+    <% else %>
+    <h4><%= t "user.show.last_name_label" %>: <%= @user.last_name %></h4>
+    <% end %>
+    <h4>Email: <%= @user.email %></h4>
+</div>
 
 <hr>
 
