@@ -11,7 +11,7 @@
       <% end %>
     </div>
     <div>
-      <%= form.rich_text_area :content, class: "form-control me-2" %>
+      <%= form.rich_text_area :content, class: "mb-3" %>
       <% @blog_post.errors.full_messages_for(:content).each do |message| %>
         <div><%= message %></div>
       <% end %>

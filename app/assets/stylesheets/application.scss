@@ -743,11 +743,22 @@ textarea{
 
 }
 
+/* devise register new */
 
+.container-register{
+  margin-left: 20rem;
+}
 
 /* Footer */
 .bottom-page{
   margin-top: 1rem;
   background-color: black;
   height: 5rem;
+}
+
+.register-title{
+  font-weight: 500;
+  color: #39730c;
+  text-shadow: #92ec4f 1px 0px 3px;
+  cursor: pointer;
 }
