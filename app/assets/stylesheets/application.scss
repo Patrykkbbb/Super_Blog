@@ -361,7 +361,7 @@
   .post_image_index img{width: 150px; margin-bottom: 2rem; margin-left: 0.2rem; margin-top: 2rem;}
 }
  
-/* blog_post/show */
+/* blog_post show - post */
 
 .card-body p a{
   text-decoration: none;
@@ -397,7 +397,7 @@
   .post_image_show img{width: 315px; margin-bottom: 2rem; margin-left: 2.5rem; margin-top: 2rem;}
 }
 @media only screen and (max-width: 770px){
-  .post_image_show img{width: 250px; margin-bottom: 2rem; margin-left: 1rem; margin-top: 2rem;}
+  .post_image_show img{width: 200px; margin-bottom: 2rem; margin-left: 1rem; margin-top: 2rem;}
 }
 @media only screen and (max-width: 540px){
   .post_image_show img{width: 150px; margin-bottom: 2rem; margin-left: 0.2rem; margin-top: 2rem;}
@@ -414,4 +414,94 @@
   flex-wrap: wrap;
   margin-right: 3rem;
   margin-bottom: 3rem;
+}
+
+/* blogPost show - comments */
+
+
+.comments-title{
+  margin-left: 10rem;
+}
+
+.comments-card{
+  margin-left: 10rem;
+}
+
+.card-title-admin a{
+  text-decoration: none;
+  font-weight: 500;
+  color: #5b2b6e;
+  text-shadow: #ce74f7 1px 0px 3px;
+  cursor: pointer;
+}
+
+.card-title-user a{
+  text-decoration: none;
+  font-weight: 500;
+  color: #39730c;
+  text-shadow: #92ec4f 1px 0px 3px;
+  cursor: pointer;
+}
+
+.card-title-admin a:hover{
+  color: #760aa9;
+  text-shadow: #980dd9 1px 0px 3px;
+  transition: 0.3s;
+}
+
+.card-title-user a:hover{
+  color: #2d5c0a;
+  text-shadow: #448a0f 1px 0px 3px;
+  transition: 0.3s;
+}
+
+.comment-card{
+  width: 18rem;
+}
+
+.btn-del-comment{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.btn-del-comment a{
+  border-radius: 7px;
+  padding: 6px;
+  color: white;
+  text-decoration: none;
+  background-color: #980dd9;
+  margin-left: 3px;
+}
+
+.btn-del-comment a:hover{
+  background-color: #760aa9;
+  transition: 0.3s;
+}
+
+.card-comment{
+  padding: 9px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 4000px){
+  .card{width: 60rem;}
+}
+
+@media only screen and (max-width: 1520px){
+  .card{width: 55rem;}
+}
+@media only screen and (max-width: 1320px){
+  .card{width: 45rem;}
+}
+@media only screen and (max-width: 960px){
+  .card{width: 25rem;}
+}
+@media only screen and (max-width: 770px){
+  .card{width: 15rem;}
+}
+@media only screen and (max-width: 540px){
+  .card{width: 10rem;}
 }
