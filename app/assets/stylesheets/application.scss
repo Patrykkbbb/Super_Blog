@@ -309,6 +309,11 @@
   background-color: #88da4a;
 }
 
+.btn-actions{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
 .btn-action-edit a:hover{
   background-color: #39730c;
   transition: 0.3s;
@@ -320,6 +325,7 @@
   color: white;
   text-decoration: none;
   background-color: #980dd9;
+  margin-left: 3px;
 }
 
 .btn-action-del a:hover{
@@ -400,4 +406,12 @@
 .card_post_show{
   margin-left: 10rem;
   margin-right: 10rem;
+}
+
+.btn-show-actions{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
 }
