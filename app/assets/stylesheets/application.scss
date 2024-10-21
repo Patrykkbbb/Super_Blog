@@ -710,3 +710,27 @@ textarea{
   text-shadow: #980dd9 1px 0px 3px;
   transition: 0.3s;
 }
+
+
+/* User avatar / Comments show post */
+.admin-comment-profile img{
+  width: 20px;
+  float: left;
+  margin-right: 20px;
+  padding: 23px;
+  border: 2px solid #e1a1ff; 
+  border-radius: 9px;
+  background-color: #bfbfbf;
+  box-shadow: 0 0 18px #ce74f7;
+}
+
+.user-comment-profile img{
+  width: 20px;
+  float: left;
+  margin-right: 20px;
+  padding: 23px;
+  border: 2px solid #90e765; 
+  border-radius: 9px;
+  background-color: #bfbfbf;
+  box-shadow: 0 0 18px #cff5bd;
+}

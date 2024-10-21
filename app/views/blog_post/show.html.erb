@@ -71,8 +71,18 @@
     <div class="comment card">
       <div class="card-body">
         <% if comments.user.admin? %>
+          <% if comments.user.avatar? %>
+            <div class="admin-comment-profile"><a href="<%= user_path(comments.user_id) %>"><%= image_tag comments.user.avatar %></a></div>
+          <% else %>
+            <div class="admin-comment-profile"><a href="<%= user_path(comments.user_id) %>"><%= image_tag "/assets/user_placeholder.png" %></a></div>
+          <% end %>
           <h5 class="card-title-admin"><%= link_to comments.commenter, user_path(comments.user_id) %><br></h5>
         <% else %>
+          <% if comments.user.avatar? %>
+            <div class="user-comment-profile"><a href="<%= user_path(comments.user_id) %>"><%= image_tag comments.user.avatar %></a></div>
+          <% else %>
+            <div class="user-comment-profile"><a href="<%= user_path(comments.user_id) %>"><%= image_tag "/assets/user_placeholder.png" %></a></div>
+          <% end %>
           <h5 class="card-title-user"><%= link_to comments.commenter, user_path(comments.user_id) %><br></h5>
         <% end %>
         <h6 class="card-subtitle mb-2 text-body-secondary">
@@ -81,6 +91,7 @@
           <% else %>
             <p><i> <%= t "user.show.user" %> </i></p>
           <% end %>
+
         </h6>
         <p class="card-comment"><%= comments.body %></p>
         <p class="card-text"><small class="text-body-secondary"><%= comments.created_at.to_date %></small></p>
