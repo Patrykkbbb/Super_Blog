@@ -618,6 +618,11 @@ textarea{
 
 /* Users - profile */
 
+
+.profile_body{
+  padding: 2rem;
+}
+
 @media only screen and (max-width: 4000px){
   .admin_profile_avatar img{width: 20rem;}
 }
@@ -661,6 +666,8 @@ textarea{
 
 
 .user_profile_avatar img{
+  float: left;
+  margin-right: 20px;
   padding: 23px;
   border: 2px solid #90e765; 
   border-radius: 9px;
@@ -669,9 +676,37 @@ textarea{
 }
 
 .admin_profile_avatar img{
+  float: left;
+  margin-right: 20px;
   padding: 23px;
   border: 2px solid #e1a1ff; 
   border-radius: 9px;
   background-color: #bfbfbf;
   box-shadow: 0 0 18px #ce74f7;
+}
+
+.admin_profile_name{
+  font-weight: 500;
+  color: #5b2b6e;
+  text-shadow: #ce74f7 1px 0px 3px;
+  cursor: pointer;
+}
+
+.user_profile_name{
+  font-weight: 500;
+  color: #39730c;
+  text-shadow: #92ec4f 1px 0px 3px;
+  cursor: pointer;
+}
+
+.user_profile_name:hover{
+  color: #2d5c0a;
+  text-shadow: #448a0f 1px 0px 3px;
+  transition: 0.3s;
+}
+
+.admin_profile_name:hover{
+  color: #760aa9;
+  text-shadow: #980dd9 1px 0px 3px;
+  transition: 0.3s;
 }
