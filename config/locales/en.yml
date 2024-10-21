@@ -172,6 +172,7 @@ en:
     index:
       info: "User list on the page"
       name: "Username"
+      admin_name: "Admin name"
     show:
       name: "Username"
       admin: "Admin"

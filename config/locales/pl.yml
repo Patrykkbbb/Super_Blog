@@ -171,6 +171,7 @@ pl:
     index:
       info: "Lista uzytkownikow na stronie"
       name: "Nazwa uzytkownika"
+      admin_name: "Nazwa Administratora"
     show:
       name: "Nazwa uzytkownika"
       admin: "Admin"

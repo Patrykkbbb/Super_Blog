@@ -564,3 +564,54 @@ textarea{
   transition: 0.3s;
 }
 
+/* Users - index */
+
+
+@media only screen and (max-width: 4000px){
+  .user_index_body{width: 60rem; margin-left: 10rem;}
+}
+
+@media only screen and (max-width: 1520px){
+  .user_index_body{width: 55rem; margin-left: 10rem;}
+}
+@media only screen and (max-width: 1320px){
+  .user_index_body{width: 50rem; margin-left: 10rem;}
+}
+@media only screen and (max-width: 960px){
+  .user_index_body{width: 30rem; margin-left: 10rem;}
+}
+@media only screen and (max-width: 770px){
+  .user_index_body{width: 25rem; margin-left: 5rem;}
+}
+@media only screen and (max-width: 540px){
+  .user_index_body{width: 25rem; margin-left: 2rem;}
+}
+
+.adminname_list a{
+  text-decoration: none;
+  font-weight: 500;
+  color: #5b2b6e;
+  text-shadow: #ce74f7 1px 0px 3px;
+  cursor: pointer;
+}
+
+.adminname_list a:hover{
+  color: #760aa9;
+  text-shadow: #980dd9 1px 0px 3px;
+  transition: 0.3s;
+}
+
+
+.username_list a{
+  text-decoration: none;
+  font-weight: 500;
+  color: #39730c;
+  text-shadow: #92ec4f 1px 0px 3px;
+  cursor: pointer;
+}
+
+.username_list a:hover{
+  color: #2d5c0a;
+  text-shadow: #448a0f 1px 0px 3px;
+  transition: 0.3s;
+}
