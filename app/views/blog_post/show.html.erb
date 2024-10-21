@@ -1,40 +1,128 @@
-<%= @blog_post.user_id %>
 <title><%= t "title.show" %> <%= @blog_post.title %></title>
-<h3> <%= t "blog_post.show.author"%>: <%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></h3>
-
-<%= image_tag @blog_post.user.avatar if @blog_post.user.avatar.present? %>
-<h3><%= @blog_post.title %></h3>
-<p><%= @blog_post.content %></p>
-<% if @blog_post.status == "pending" %>
-  <p><i> Status: <%= t "blog_post.show.pend_status"%></i></p>
-<% else %>
-  <p><i> Status: <%= t "blog_post.body.pub_status"%></i></p>
-<% end %>
-<p> <%= t "blog_post.show.views" %>: <%= @blog_post.views %> <p>
-
+<br>
 <hr>
-<h3> <%= t "blog_post.show.comments" %> </h3>
-<div>
-  <% @blog_post.comments.each do |comments| %>
-    <%= link_to comments.commenter, user_path(comments.user_id) %><br>
-    <%= comments.body %><br>
-    <% if current_user.id == comments.user_id %>
-      <%= link_to (t("blog_post.body.delete")), blog_post_comment_path(@blog_post, comments) , data: {
-        turbo_method: :delete,
-        turbo_confirm: "#{t "comments.comment_form.confirm"}"
-      } %><br><br>
-    <% elsif current_user.admin? %>
-      <%= link_to (t("blog_post.body.delete")), blog_post_comment_path(@blog_post, comments) , data: {
-        turbo_method: :delete,
-        turbo_confirm: "#{t "comments.comment_form.confirm"}"
-      } %><br><br>
+<br>
+<div class="card_post_show">
+  <div class="card mb-3">
+    <% if @blog_post.post_image.present? %>
+      <div class="post_image_show"><%= image_tag  @blog_post.post_image %></div>
+    <% else %>
+      <div class="post_image_show"><%= image_tag "/assets/post_placeholder.png" %></div>
     <% end %>
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title"><%= @blog_post.title %></h5>
+      <% if @blog_post.user.admin? %>
+      <p class="card-title">
+        <p><%= t "blog_post.show.author"%>: <b class="show_authorpost_admin"><%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></b></p>
+      <% else %>
+        <p><%= t "blog_post.show.author"%>: <b class="show_authorpost_user"><%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></b></p>
+      <% end %>
+      
+      <p class="card-text"><%= @blog_post.content %></p>
+      
+      <p class="card-text"><small class="text-body-secondary">
+        <% if @blog_post.status == "pending" %>
+          <p><i> Status: <%= t "blog_post.show.pend_status"%></i></p>
+        <% else %>
+          <p><i> Status: <%= t "blog_post.body.pub_status"%></i></p>
+        <% end %>
+      </small></p>
+      <p class="card-text"><small class="text-body-secondary"> <%= t "blog_post.show.views" %>: <%= @blog_post.views %> </small></p>
+    </div>
+    <div class="btn-show-actions">
+  <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <div class="btn-actions">
+        <div class="btn-action-edit"><%= link_to (t("blog_post.body.edit")), edit_blog_post_path(@blog_post) %></div><br>
+        <div class="btn-action-del"><%= link_to (t("blog_post.body.delete")), blog_post_path(@blog_post), data: {
+              turbo_method: :delete,
+              turbo_confirm: "#{t "blog_post.body.confirm" } '#{@blog_post.title}'?"
+          } %> </div> 
+        </div>
+    <% elsif current_user.id == @blog_post.user_id %>
+        <div class="btn-action-edit"><%= link_to (t("blog_post.body.edit")), edit_blog_post_path(@blog_post) %></div><br>
+        <div class="btn-action-del"><%= link_to (t("blog_post.body.delete")), blog_post_path(@blog_post), data: {
+              turbo_method: :delete,
+              turbo_confirm: "#{t "blog_post.body.confirm" } '#{@blog_post.title}'?"
+          } %> </div> 
+      <% end %>
   <% end %>
-
 </div>
 
-<hr>
-<h3> <%= t "blog_post.show.comment" %> </h3>
-<%= render "comments/form" %>
+  </div>
+</div>
 
-<%= link_to "Cofnij", :back %>
+
+
+<%
+=begin%>
+  
+<%
+=end%>
+
+<hr>
+
+<div class="comments-title"><h3> <%= t "blog_post.show.comments" %>: </h3></div>
+<div class="comments-card">
+  <% @blog_post.comments.each do |comments| %>
+
+
+    <div class="comment card">
+      <div class="card-body">
+        <% if comments.user.admin? %>
+          <% if comments.user.avatar? %>
+            <div class="admin-comment-profile"><a href="<%= user_path(comments.user_id) %>"><%= image_tag comments.user.avatar %></a></div>
+          <% else %>
+            <div class="admin-comment-profile"><a href="<%= user_path(comments.user_id) %>"><%= image_tag "/assets/user_placeholder.png" %></a></div>
+          <% end %>
+          <h5 class="card-title-admin"><%= link_to comments.commenter, user_path(comments.user_id) %><br></h5>
+        <% else %>
+          <% if comments.user.avatar? %>
+            <div class="user-comment-profile"><a href="<%= user_path(comments.user_id) %>"><%= image_tag comments.user.avatar %></a></div>
+          <% else %>
+            <div class="user-comment-profile"><a href="<%= user_path(comments.user_id) %>"><%= image_tag "/assets/user_placeholder.png" %></a></div>
+          <% end %>
+          <h5 class="card-title-user"><%= link_to comments.commenter, user_path(comments.user_id) %><br></h5>
+        <% end %>
+        <h6 class="card-subtitle mb-2 text-body-secondary">
+          <% if comments.user.admin? %>
+            <p><i> <%= t "user.show.admin" %> </i></p>
+          <% else %>
+            <p><i> <%= t "user.show.user" %> </i></p>
+          <% end %>
+
+        </h6>
+        <p class="card-comment"><%= comments.body %></p>
+        <p class="card-text"><small class="text-body-secondary"><%= comments.created_at.to_date %></small></p>
+      </div>
+    <div class="btn-del-comment">  
+      <% if current_user.id == comments.user_id %>
+        <%= link_to (t("blog_post.body.delete")), blog_post_comment_path(@blog_post, comments) , data: {
+          turbo_method: :delete,
+          turbo_confirm: "#{t "comments.comment_form.confirm"}"
+        } %><br><br>
+      <% elsif current_user.admin? %>
+        <%= link_to (t("blog_post.body.delete")), blog_post_comment_path(@blog_post, comments) , data: {
+          turbo_method: :delete,
+          turbo_confirm: "#{t "comments.comment_form.confirm"}"
+        } %><br><br>
+      <% end %>
+    </div>  
+    </div>
+    <br>
+  <% end %>
+    </div>
+    
+<hr>
+<div class="body-comment">
+  <h3> <%= t "blog_post.show.comment" %> </h3>
+  <%= render "comments/form" %>
+  <br>
+  <%= link_to "Cofnij", :back, class: "back-button" %>
+</div>
+
+
+
+
+

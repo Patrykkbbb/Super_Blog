@@ -1,66 +1,70 @@
 <title><%= t "title.edit_profile" %> <%= @user.nickname %></title>
+<hr>
+<br>
+<div class="container-register">
+  <h2 class="login-title"><%= t "devise.registrations.edit.info" %> <%= resource_name.to_s.humanize %></h2>
 
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-<h2><%= t "devise.registrations.edit.info" %> <%= resource_name.to_s.humanize %></h2>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <div>
+      <%= f.label :"#{t "devise.registrations.edit.nickname" }" %><br>
+      <%= f.text_field :nickname, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div>
+      <%= f.label :"#{t "devise.registrations.edit.first_name" }" %><br>
+      <%= f.text_field :first_name, class: "form-control" %>
+    </div>
 
-  <div>
-    <%= f.label :"#{t "devise.registrations.edit.nickname" }" %><br />
-    <%= f.text_field :nickname %>
-  </div>
+    <div>
+      <%= f.label :"#{t "devise.registrations.edit.last_name" }" %><br>
+      <%= f.text_field :last_name, class: "form-control" %>
+    </div>
 
-  <div>
-    <%= f.label :"#{t "devise.registrations.edit.first_name" }" %>
-    <%= f.text_field :first_name %>
-  </div>
-
-  <div>
-    <%= f.label :"#{t "devise.registrations.edit.last_name" }" %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div>
-    <%= f.label :"#{t "devise.registrations.edit.avatar_label" }" %>
-    <%= f.file_field :avatar, direct_upload: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div><%= t "devise.registrations.edit.confirmation" %> <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(<%= t "devise.registrations.edit.pass_helper" %>)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> <%= t "devise.registrations.edit.char_min"%></em>
+    <div>
+      <%= f.label :"#{t "devise.registrations.edit.avatar_label" }" %>
+      <%= f.file_field :avatar, direct_upload: true %>
+    </div>
+    <br>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div><%= t "devise.registrations.edit.confirmation" %> <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :password %> <i>(<%= t "devise.registrations.edit.pass_helper" %>)</i><br />
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> <%= t "devise.registrations.edit.char_min"%></em>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(<%= t "devise.registrations.edit.pass_helper2" %>)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "#{t "devise.registrations.edit.button"}" %>
-  </div>
-<% end %>
-
-<% if current_user.admin? %>
-  <h3><%= t "devise.registrations.edit.del_account"%></h3>
-  <div><%= button_to "#{t "devise.registrations.edit.del_button"}", registration_path(resource_name), data: { confirm: "#{t "devise.registrations.edit.confirm"}", turbo_confirm: "#{t "devise.registrations.edit.confirm"}" }, method: :delete %></div>
-<% end %>
-<%= link_to "#{t "devise.registrations.edit.back"}", :back %>
+    <div class="field">
+      <%= f.label :current_password %> <i>(<%= t "devise.registrations.edit.pass_helper2" %>)</i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "#{t "devise.registrations.edit.button"}", class: "btn btn-success" %>
+    </div>
+  <% end %>
+  <br>
+  <% if current_user.admin? %>
+    <h3><%= t "devise.registrations.edit.del_account"%></h3>
+    <div><%= button_to "#{t "devise.registrations.edit.del_button"}", registration_path(resource_name), data: { confirm: "#{t "devise.registrations.edit.confirm"}", turbo_confirm: "#{t "devise.registrations.edit.confirm"}" }, method: :delete, class: "btn btn-danger"%></div>
+  <% end %>
+  <br>
+  <%= link_to "#{t "devise.registrations.edit.back"}", :back, class: "btn btn-success" %>
+  <br><br>
+</div>

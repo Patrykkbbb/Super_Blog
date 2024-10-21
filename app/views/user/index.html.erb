@@ -1,20 +1,40 @@
 <title><%= t "title.user_index" %></title>
 
+<br>
+<div class="user_index_body">
 <h2> <%= t "user.index.info"%> </h2>
 
 
-    <table>
+    <table class="table">
     <tr>
-        <th><%= t "user.index.name"%></th>
-        <th>Email</th>
+        <th scope="row"><%= t "user.index.admin_name"%></th>
+        <th scope="row">Email</th>
     </tr>
     <% @user.each do |user| %>
     <tr>
-        <td><%= link_to user.nickname, user_path(user) %></td>
-        <td><%= user.email %></td>
+        <% if user.admin? %>
+            <td><div class="adminname_list"><%= link_to user.nickname, user_path(user) %></div></td>
+            <td><%= user.email %></td>
+        <% end %>
+    </tr>
+    <% end %>
+    </table> 
+    <br>
+        <table class="table">
+    <tr>
+        <th scope="row"><%= t "user.index.name"%></th>
+        <th scope="row">Email</th>
+    </tr>
+    <% @user.each do |user| %>
+    <tr>
+        <% if !user.admin? %>
+            <td><div class="username_list"><%= link_to user.nickname, user_path(user) %></div></td>
+            <td><%= user.email %></td>
+        <% end %>
     </tr>
     <% end %>
     </table> 
 
 <hr>
+</div>
 <%== pagy_nav(@pagy) if @pagy.pages > 1 %>

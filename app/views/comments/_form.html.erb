@@ -3,8 +3,12 @@
       <%= form.hidden_field :user_id, value: "#{current_user.id}" %>
       <%= form.hidden_field :commenter, value: "#{current_user.nickname}" %>
     </div>
-    <div>
-      <%= form.text_area :body %>
+    <div class="body-com-textarea">
+      <%= form.text_area :body, class: "form-control me-2"%>
     </div>
-    <%= form.submit (t("comments.comment_form.comment")) %>
+    <br>
+    
+    <div class="">
+    <%= form.submit (t("comments.comment_form.comment")), class: "comm-button" %>
+    </div>
 <% end %>

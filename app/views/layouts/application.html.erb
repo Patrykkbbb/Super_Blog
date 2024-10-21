@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -15,42 +14,88 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>
-  <div class="container">
-    <%= link_to "🇬🇧", url_for(locale: :en) %>
-    <%= link_to "🇵🇱", url_for(locale: :pl) %>
+    <nav class="navbar sticky-top bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="navbar-logo"><a href="<%= root_path %>"><%= image_tag "/assets/logo.png" %></a></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <p><%= t "hello" %></p>
-    <hr>
-    <br>
-    <%= render "search/form" %>
-    <% if user_signed_in? %>
-      <% if current_user.admin? %>
-        <%
-=begin%>
- <%= link_to "Panel administratora", admin_dashboard_path %> 
-<%
-=end%>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <% if user_signed_in? %>
+
+          <li class="nav-item">
+            <% if current_user.admin? %>
+              <p> <%= t "application.body.logged_as"%>: <b class="user_admin"> <%= current_user.nickname %> (Administrator) </b></p>
+            <% else %>
+              <p> <%= t "application.body.logged_as"%>: <b class="user_user"> <%= current_user.nickname %> </b></p>
+            <% end %>
+          </li>
+            <li class="nav-item">
+              <p><%= link_to (t ("application.body.profile")), user_path(current_user.id) %></p>
+            </li>
+            <li class="nav-item">
+              <%= button_to (t ("application.body.logout")), destroy_user_session_path, :method => :delete %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <p><%= link_to (t ("application.body.login")), new_user_session_path %></p>
+            </li>
+            <li class="nav-item">
+              <p><%= link_to (t ("application.body.signin")), new_user_registration_path %></p>
+            </li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </nav>
+
+
+    <div class="container row2">
+      <div class="langs">
+        <%= link_to "🇬🇧", url_for(locale: :en) %>
+        <%= link_to "🇵🇱", url_for(locale: :pl) %>
+      </div>
+      <div class="logo"><a href="<%= root_path %>"><%= image_tag "/assets/logo.png" %></a></div>
+      <br>
+
+      <% if notice %>
+        <div class="alert alert-success" role="alert"><%= notice %></div>
+      <% elsif alert %>
+      <div class="alert alert-danger" role="alert"><%= alert %></div>
       <% end %>
-        <% if current_user.admin? %>
-          <p> <%= t "application.body.logged_as"%>: <b> <%= current_user.nickname %> (Administrator) </b></p>
-        <% else %>
-          <p> <%= t "application.body.logged_as"%>: <b> <%= current_user.nickname %> </b></p>
-        <% end %>
-      <%= link_to (t ("application.body.profile")), user_path(current_user.id) %>
-      <%= link_to (t ("application.body.edit")), edit_user_registration_path %>
-      <%= button_to (t ("application.body.logout")), destroy_user_session_path, :method => :delete %>
-    <% else %>
-      <%= link_to (t ("application.body.login")), new_user_session_path %>
-      <%= link_to (t ("application.body.signin")), new_user_registration_path %>
-    <% end %>
-    <div><%= notice if notice %></div>
-    <div><%= alert if alert %></div>
-    <h2> <%= link_to "BlogPost", root_path %></h2>
-    <hr>
-    <%= yield %>
-</div>
-  </body>
+      <ul class="nav-links">
+        <li><%= link_to (t("blog_post.index.create")), new_blog_post_path %></li>
+        <li class="green"><%= link_to (t("blog_post.index.pending")), pending_blog_posts_path %></li>
+        <li><%= link_to (t("blog_post.index.users_list")), user_list_path %></li>
+        <li class="green"><%= link_to (t("blog_post.index.about")), about_blog_post_path %></li>
+      </ul>
+      <%= render "search/form" %>
+
+
+        <%= yield %>
+        <br>
+    </div>
+      <footer class="bottom-page">
+        <div class="contact">
+         <br>
+         <p>© 2024 Patryk Blachowicz.</p>
+           <p>
+            <%= t "footer.contact"%>: 
+            <a class="footer-link" href="mailto:patrix9696@gmail.com">patrix9696@gmail.com</a> |
+            <a class="footer-link" href="https://github.com/Patrykkbbb">GitHub</a>
+          </p>
+          <p><b> </b></p>
+        </div>
+      </footer>
+</body>
 </html>
+
+

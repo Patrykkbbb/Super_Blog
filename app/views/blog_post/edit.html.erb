@@ -1,5 +1,5 @@
 <title><%= t "title.edit" %> <%= @blog_post.title %></title>
 
-<h2> <%= t "blog_post.edit.information" %> <%= @blog_post.title.truncate(15) %> </h2>
+<h2 class="login-title">> <%= t "blog_post.edit.information" %> <%= @blog_post.title.truncate(15) %> </h2>
 <%= render "form", blog_post:@blog_post %>
 <%= link_to (t("blog_post.edit.back")), root_path %>

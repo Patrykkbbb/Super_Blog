@@ -172,6 +172,7 @@ en:
     index:
       info: "User list on the page"
       name: "Username"
+      admin_name: "Admin name"
     show:
       name: "Username"
       admin: "Admin"
@@ -211,3 +212,9 @@ en:
     login: "Log in"
     user_index: "Users list" 
     user_show: "User"
+
+  footer:
+    contact: "Contact"
+
+  about:
+    title: "About me"
