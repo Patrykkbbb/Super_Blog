@@ -114,11 +114,12 @@
 
 
 <hr>
-<h3> <%= t "blog_post.show.comment" %> </h3>
-<%= render "comments/form" %>
-
-<%= link_to "Cofnij", :back %>
-
+<div class="body-comment">
+  <h3> <%= t "blog_post.show.comment" %> </h3>
+  <%= render "comments/form" %>
+  <br>
+  <%= link_to "Cofnij", :back, class: "back-button" %>
+</div>
 
 
 

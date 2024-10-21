@@ -505,3 +505,62 @@
 @media only screen and (max-width: 540px){
   .card{width: 10rem;}
 }
+
+@media only screen and (max-width: 4000px){
+  .body-com-textarea textarea{width: 60rem;}
+}
+
+@media only screen and (max-width: 1520px){
+  .body-com-textarea textarea{width: 55rem;}
+}
+@media only screen and (max-width: 1320px){
+  .body-com-textarea textarea{width: 45rem;}
+}
+@media only screen and (max-width: 960px){
+  .body-com-textarea textarea{width: 25rem;}
+}
+@media only screen and (max-width: 770px){
+  .body-com-textarea textarea{width: 15rem;}
+}
+@media only screen and (max-width: 540px){
+  .body-com-textarea textarea{width: 10rem;}
+}
+
+textarea{
+  resize: none;
+}
+
+.body-comment{margin-left: 10rem;}
+
+.back-button{
+  text-decoration: none;
+  border-radius: 7px;
+  padding: 6px;
+  color: white;
+  text-decoration: none;
+  background-color: #980dd9;
+  margin-left: 3px;
+}
+
+.back-button:hover{
+  background-color: #760aa9;
+  transition: 0.3s;
+}
+
+.comm-button{
+  border-style: none;
+}
+
+.comm-button{
+  border-radius: 7px;
+  padding: 6px;
+  color: white;
+  text-decoration: none;
+  background-color: #88da4a;
+}
+
+.comm-button:hover{
+  background-color: #39730c;
+  transition: 0.3s;
+}
+
