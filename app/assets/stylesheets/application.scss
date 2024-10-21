@@ -714,10 +714,10 @@ textarea{
 
 /* User avatar / Comments show post */
 .admin-comment-profile img{
-  width: 20px;
+  width: 50px;
   float: left;
   margin-right: 20px;
-  padding: 23px;
+  padding: 3px;
   border: 2px solid #e1a1ff; 
   border-radius: 9px;
   background-color: #bfbfbf;
@@ -725,10 +725,11 @@ textarea{
 }
 
 .user-comment-profile img{
-  width: 20px;
+  width: 50px;
+  object-fit: cover;
   float: left;
   margin-right: 20px;
-  padding: 23px;
+  padding: 3px;
   border: 2px solid #90e765; 
   border-radius: 9px;
   background-color: #bfbfbf;
