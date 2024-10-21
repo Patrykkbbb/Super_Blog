@@ -64,13 +64,13 @@
 
 .nav-links a:hover{
   color: #2d5c0a;
-  text-shadow: #448a0f 6px 0px 6px;
+  text-shadow: #448a0f 1px 0px 3px;
   transition: 0.3s;
 }
 
 .nav-links .green a:hover{
   color: #760aa9;
-  text-shadow: #980dd9 6px 0px 6px;
+  text-shadow: #980dd9 1px 0px 3px;
   transition: 0.3s;
 }
 
@@ -96,11 +96,6 @@
     text-decoration: none;
  }
 
- .langs a{
-    border-radius: 7px;
-    box-shadow: 2px 2px 12px #ce74f7;
-
- }
 
  .navbar-logo img{
     width: 80px;
@@ -113,26 +108,26 @@
  .user_admin{
    font-weight: 500;
    color: #5b2b6e;
-   text-shadow: #ce74f7 4px 0px 4px;
+   text-shadow: #ce74f7 1px 0px 3px;
    cursor: pointer;
  }
 
  .user_user{
    font-weight: 500;
    color: #39730c;
-   text-shadow: #92ec4f 4px 0px 4px;
+   text-shadow: #92ec4f 1px 0px 3px;
    cursor: pointer;
  }
 
  .user_user:hover{
    color: #2d5c0a;
-   text-shadow: #448a0f 6px 0px 6px;
+   text-shadow: #448a0f 1px 0px 3px;
    transition: 0.3s;
  }
 
  .user_admin:hover{
    color: #760aa9;
-   text-shadow: #980dd9 6px 0px 6px;
+   text-shadow: #980dd9 1px 0px 3px;
    transition: 0.3s;
  }
 
@@ -143,7 +138,7 @@
 
  .nav-item p a:hover{
    color: #39730c;
-   text-shadow: #92ec4f 4px 0px 4px;
+   text-shadow: #92ec4f 1px 0px 3px;
    transition: 0.3s;
  }
 
@@ -155,7 +150,7 @@
 
  .nav-item button:hover{
   color: #760aa9;
-  text-shadow: #980dd9 4px 0px 4px;
+  text-shadow: #980dd9 1px 0px 3px;
   transition: 0.3s;
 }
 
@@ -301,7 +296,7 @@
 
 .card-body h3 a:hover{
   color: #39730c;
-  text-shadow: #92ec4f 4px 0px 4px;
+  text-shadow: #92ec4f 1px 0px 3px;
   transition: 0.3s;
   text-decoration: none;
 }
