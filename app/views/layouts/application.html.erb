@@ -18,7 +18,6 @@
   </head>
 
   <body>
-  <header>
     <nav class="navbar sticky-top bg-body-tertiary">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -79,9 +78,13 @@
         <li class="green"><%= link_to (t("blog_post.index.about")), about_blog_post_path %></li>
       </ul>
       <%= render "search/form" %>
-      <%= yield %>
-  </div>
-  </header>
+
+
+        <%= yield %>
+    </div>
+      <footer class="bottom-page">
+        
+      </footer>
 </body>
 </html>
 

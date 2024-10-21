@@ -5,13 +5,13 @@
 
     <div>
       <%= form.label :"#{t "blog_post.create_form.title"}" %>
-      <%= form.text_field :title %>
+      <%= form.text_field :title, class: "form-control me-2" %>
       <% @blog_post.errors.full_messages_for(:title).each do |message| %>
         <div><%= message %></div>
       <% end %>
     </div>
     <div>
-      <%= form.rich_text_area :content %>
+      <%= form.rich_text_area :content, class: "form-control me-2" %>
       <% @blog_post.errors.full_messages_for(:content).each do |message| %>
         <div><%= message %></div>
       <% end %>
@@ -31,5 +31,6 @@
       <%= form.select :status, "#{t "blog_post.create_form.pub_status"}": 'published', "#{t "blog_post.create_form.pend_status"}": 'pending' %>
       </div>
     <% end %>
-    <%= form.submit (t("blog_post.create_form.save")) %>
+    <br>
+    <%= form.submit (t("blog_post.create_form.save")), class: "comm-button" %>
 <% end %>
