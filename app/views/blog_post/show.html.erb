@@ -1,5 +1,24 @@
-<%= @blog_post.user_id %>
 <title><%= t "title.show" %> <%= @blog_post.title %></title>
+
+<div class="card mb-3">
+  <% if @blog_post.post_image.present? %>
+    <div class="post_image_show"><%= image_tag  @blog_post.post_image %></div>
+  <% else %>
+    <div class="post_image_show"><%= image_tag "/assets/post_placeholder.png" %></div>
+  <% end %>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <% if @blog_post.user.admin? %>
+    <p class="card-title">
+      <p><%= t "blog_post.show.author"%>: <b class="show_authorpost_admin"><%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></b></p>
+    <% else %>
+      <p><%= t "blog_post.show.author"%>: <b class="show_authorpost_user"><%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></b></p>
+    <% end %>
+    
+    <p class="card-text"><%= @blog_post.title %></p>
+    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+  </div>
+</div>
 <h3> <%= t "blog_post.show.author"%>: <%= link_to @blog_post.user.nickname, user_path(@blog_post.user_id) %></h3>
 
 <%= image_tag @blog_post.user.avatar if @blog_post.user.avatar.present? %>
@@ -38,3 +57,9 @@
 <%= render "comments/form" %>
 
 <%= link_to "Cofnij", :back %>
+
+
+
+
+
+

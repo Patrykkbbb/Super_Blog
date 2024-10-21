@@ -355,4 +355,45 @@
   .post_image_index img{width: 150px; margin-bottom: 2rem; margin-left: 0.2rem; margin-top: 2rem;}
 }
  
-//  text-shadow: #ce74f7 1px 0 15px;
+/* blog_post/show */
+
+.card-body p a{
+  text-decoration: none;
+  color: black;
+}
+
+.show_authorpost_admin{
+   font-weight: 500;
+   color: #5b2b6e;
+   text-shadow: #ce74f7 1px 0px 3px;
+   cursor: pointer;
+}
+
+.show_authorpost_user{
+  font-weight: 500;
+  color: #39730c;
+  text-shadow: #92ec4f 1px 0px 3px;
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 4000px){
+  .post_image_show img{width: 550px; margin-bottom: 2rem; margin-left: 2.5rem; margin-top: 2rem;}
+}
+
+@media only screen and (max-width: 1520px){
+  .post_image_show img{width: 450px; margin-bottom: 2rem; margin-left: 0.5rem; margin-top: 2rem;}
+}
+@media only screen and (max-width: 1320px){
+  .post_image_show img{width: 350px; margin-bottom: 2rem; margin-left: 2.5rem; margin-top: 2rem;}
+}
+@media only screen and (max-width: 960px){
+  .post_image_show img{width: 315px; margin-bottom: 2rem; margin-left: 2.5rem; margin-top: 2rem;}
+}
+@media only screen and (max-width: 770px){
+  .post_image_show img{width: 250px; margin-bottom: 2rem; margin-left: 1rem; margin-top: 2rem;}
+}
+@media only screen and (max-width: 540px){
+  .post_image_show img{width: 150px; margin-bottom: 2rem; margin-left: 0.2rem; margin-top: 2rem;}
+}
+
