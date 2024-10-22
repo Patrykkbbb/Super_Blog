@@ -8,3 +8,14 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+
+User.create!(id: "1", nickname: "Admin", email: "admin@superblog.com",confirmed_at: Time.now,  password: "123456", password_confirmation: "123456", admin: true)
+User.create!(id: "2", nickname: "User1", email: "user1@superblog.com",confirmed_at: Time.now,  password: "123456", password_confirmation: "123456", admin: false)
+User.create!(id: "3", nickname: "User2", email: "user2@superblog.com",confirmed_at: Time.now,  password: "123456", password_confirmation: "123456", admin: false)
+User.create!(id: "4", nickname: "User3", email: "user3@superblog.com",confirmed_at: Time.now,  password: "123456", password_confirmation: "123456", admin: false)
+
+100.times do |a|
+    a += 1
+    BlogPost.create!(title: "Post nr. #{a}", content: " Lorem ipsum dolor sit pharetra aliquam. Aliquam erat volutpat. Donec ac maximus nunc. Vivamus semper feugiat enim, sed vulputate urna. Proin rhoncus porttitor ante, sed commodo elit accumsan eu. Nullam interdum ultrices ex, vitae molestie neque consequat nec. Maecenas pretium nunc a volutpat varius. Nullam tellus felis, scelerisque vitae consequat sodales, rhoncus at nunc. Aenean imperdiet orci auctor est dapibus luctus. ", created_at: Time.current, views: "1", status: "published", user_id: "1" )
+end
+
