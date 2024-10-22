@@ -1,6 +1,6 @@
 class BlogPostController < ApplicationController
     before_action :find_blog_post, only: [:show,:edit,:update,:destroy]
-    before_action :authenticate_user!, except: [:index,:about]
+    before_action :authenticate_user!, except: [:index]
 
     def index 
       @blog_post = BlogPost.sorted
@@ -10,9 +10,6 @@ class BlogPostController < ApplicationController
     def show 
       @blog_post.views += 1 
       @blog_post.save
-    end
-
-    def about
     end
 
     def pending
@@ -38,7 +35,7 @@ class BlogPostController < ApplicationController
     end
 
     def update
-      if @blog_post.update(blog_post_params)
+      if @blog_post.update(update_blog_post_params)
         flash.notice = "#{t 'blog_post.controller.update_success'}"
         redirect_to @blog_post
       else 
@@ -59,6 +56,10 @@ class BlogPostController < ApplicationController
     private
     def blog_post_params
       params.require(:blog_post).permit(:title, :content, :views, :user_id, :status, :post_image)
+    end
+
+    def update_blog_post_params
+      params.require(:blog_post).permit(:title, :content, :views,:status, :post_image)
     end
 
     def find_blog_post

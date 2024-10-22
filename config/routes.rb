@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
     # Defines the root path route ("/")
     root "blog_post#index"
-    get "blog_post/o_mnie", to: "blog_post#about", as: :about_blog_post
     get "blog_post/new", to: "blog_post#new", as: :new_blog_post
     get "blog_post/oczekujacy", to: "blog_post#pending", as: :pending_blog_posts
     get "blog_post/:id", to: "blog_post#show", as: :blog_post

@@ -44,9 +44,58 @@
 }
 
 
+/* Main Layout */
+
+@media only screen and (max-width: 1320px){
+  body {font-size: 12px;}
+  body h1{font-size: 30px;}
+  body h2{font-size: 25px;}
+  body h3{font-size: 20px;}
+  body h4{font-size: 15px;}
+  body h5{font-size: 10px;}
+  body h6{font-size: 10px;}
+}
+@media only screen and (max-width: 960px){
+  body {font-size: 12px;}
+  body h1{font-size: 30px;}
+  body h2{font-size: 25px;}
+  body h3{font-size: 20px;}
+  body h4{font-size: 15px;}
+  body h5{font-size: 10px;}
+  body h6{font-size: 10px;}
+}
+@media only screen and (max-width: 770px){
+  body {font-size: 6px;}
+  body h1{font-size: 19px;}
+  body h2{font-size: 18px;}
+  body h3{font-size: 15px;}
+  body h4{font-size: 10px;}
+  body h5{font-size: 8px;}
+  body h6{font-size: 7px;}
+}
+@media only screen and (max-width: 540px){
+  body {font-size: 6px;}
+  body h1{font-size: 16px;}
+  body h2{font-size: 14px;}
+  body h3{font-size: 12px;}
+  body h4{font-size: 10px;}
+  body h5{font-size: 7px;}
+  body h6{font-size: 5px;}
+}
+
+.container{
+  box-shadow: 0px 0px 17px #888888;
+}
+
+.sticky-top{
+  box-shadow: 0px 0px 6px #888888;
+}
+
+
 /* header/navbar */
 
 
+  
 .nav-links li{
   display: inline;
 }
@@ -269,25 +318,13 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 4000px){
-  .card{width: 60rem;}
-}
 
 @media only screen and (max-width: 1520px){
-  .card{width: 50rem;}
+  .cont .card{width: 50rem;}
 }
-@media only screen and (max-width: 1320px){
-  .card{width: 40rem;}
-}
-@media only screen and (max-width: 960px){
-  .card{width: 40rem;}
-}
-@media only screen and (max-width: 770px){
-  .card{width: 35rem;}
-}
-@media only screen and (max-width: 540px){
-  .card{width: 10rem;}
-}
+
+
+
 
 .card-body h3 a{
   color: black;
