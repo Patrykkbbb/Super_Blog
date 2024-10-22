@@ -1,6 +1,6 @@
 class BlogPostController < ApplicationController
     before_action :find_blog_post, only: [:show,:edit,:update,:destroy]
-    before_action :authenticate_user!, except: [:index,:about]
+    before_action :authenticate_user!, except: [:index]
 
     def index 
       @blog_post = BlogPost.sorted
@@ -10,9 +10,6 @@ class BlogPostController < ApplicationController
     def show 
       @blog_post.views += 1 
       @blog_post.save
-    end
-
-    def about
     end
 
     def pending
