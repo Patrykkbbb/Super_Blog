@@ -1,5 +1,6 @@
 # Super-Blog
 ![Logo Github](https://github.com/Patrykkbbb/Super_Blog/blob/main/app/assets/images/logo.png)
+
 Blog application with standard blog features. 
 
 # Table of Contents
