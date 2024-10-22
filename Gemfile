@@ -71,3 +71,7 @@ gem 'bootstrap', '~> 5.3', '>= 5.3.3'
 
 gem 'jquery-rails'
 
+group :development do 
+  gem 'letter_opener'
+end
+
