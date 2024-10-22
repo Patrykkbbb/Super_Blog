@@ -24,7 +24,6 @@ Rails.application.routes.draw do
     get "blog_post/:id/edit", to: "blog_post#edit", as: :edit_blog_post
     patch "blog_post/:id", to: "blog_post#update"
     delete "blog_post/:id", to: "blog_post#destroy"
-    get "admin_dashboard/", to: "admin#index", as: :admin_dashboards
 
     resources :blog_post do 
       resources :comments
