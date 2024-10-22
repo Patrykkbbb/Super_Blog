@@ -81,6 +81,10 @@ Open the terminal and clone the repository to your local device:
 
 ### 4. Create and configure the database 
 
+Before running the database commands, make sure to configure your database settings in the `config/database.yml` file. You need to set the appropriate database adapter, username, password, and database name for your environment.
+
+Once you have configured the database, you can proceed with:
+
 ```
 rails db:create
 rails db:migrate
