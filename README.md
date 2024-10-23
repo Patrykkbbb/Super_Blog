@@ -47,11 +47,11 @@ Fullstack blog application created with Ruby on Rails framework, with features l
 
 ## Screenshots
 
-![screenshot1](https://ibb.co/Rh2rNg3)
-![screenshot2](https://ibb.co/qxZCKHb)
-![screenshot3](https://ibb.co/nkPSR3G)
-![screenshot4](https://ibb.co/kHM18Xm)
-![screenshot5](https://ibb.co/6NHb4hZ)
+![screenshot1](https://i.ibb.co/0Bq4KnC/ss1.png)
+![screenshot2](https://i.ibb.co/0QwKT0P/ss2.png)
+![screenshot3](https://i.ibb.co/3hRHkf3/ss3.png)
+![screenshot4](https://i.ibb.co/M296V7B/ss4.png)
+![screenshot5](https://i.ibb.co/pnfZ3DP/ss5.png)
 
 ## Setup
 
