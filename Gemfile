@@ -61,7 +61,7 @@ gem "devise", "~> 4.9"
 
 gem "ransack", "~> 4.2"
 
-gem "pagy", "~> 9.1"
+gem "pagy", "~> 9.3"
 
 gem 'rails-i18n', '~> 7.0', '>= 7.0.9'
 
